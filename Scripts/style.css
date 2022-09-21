@@ -1,0 +1,66 @@
+*{
+background-color: #00AFB9;
+margin: 0;
+top: 0;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo img{
+    width: 35%;
+    height: 35%;
+}
+.labels{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+}
+.labels label{
+    color: #050A30;
+    font-size: large;
+    font-family:'IBM Plex Sans';
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputs input{
+    background-color: #00AFB9;
+    font-size: large;
+    font-family:'IBM Plex Sans';
+    color: white;
+}
+input::placeholder{
+    color: white;
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+    height: 50%;
+}
+.btn button{
+    height: 100%;
+    width: 15%;
+    background-color: #050A30;
+    color: white;
+    border-radius: 25px;
+    font-size: large;
+    font-family:'IBM Plex Sans';
+    transition-property: color ;
+}
+.btn :active{
+    background-color: #070d3b;
+}
+.btn :hover{
+    transition: background-color 2s;
+    background-color: #111a5e;
+    width: 17%;
+}
+
+
