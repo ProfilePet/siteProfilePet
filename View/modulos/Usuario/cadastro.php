@@ -43,7 +43,7 @@
 					//codigo da Select
 					//Deixar Value com codEstad
 				foreach($consultaES as $key => $consES){
-					$uf=($consES['uf']);
+					$uf=($consES['ufEstado']);
 					$codCidade=($consES['codEstado']);
 					echo "<option value=$codCidade>$uf</option>";
 				}
