@@ -10,7 +10,7 @@
 <body>
     <form method="post" action="logar-usuario">
     <div class="logo">
-        <img src="Imagens/TelaLogin/logo.png" height="250">
+        <img src="Imagens/logo.png" height="250">
     </div>
     <div class="labels">
         <label>Email</label><br>

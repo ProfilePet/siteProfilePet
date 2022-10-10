@@ -47,11 +47,6 @@ if(isset($_GET['url']))
             $anm = new AnimalController();
             $anm->editar();
         break;
-        //Geral
-        case 'tela-principal':
-            $grl = new UsuarioController();
-            $grl->telaPrincipal();
-        break;
 
 
         default:
@@ -69,6 +64,6 @@ if(isset($_GET['url']))
 }
 else{
     $usu = new UsuarioController();
-    $usu->telaPrincipal();
+    $usu->telaLogin();
 }
 ?>

@@ -1,0 +1,154 @@
+/*Body*/
+body{
+  background-color: #00AFB9; 
+}
+
+/*Label*/
+label{
+  margin-left: 30px;
+}
+
+/*H1 - Cadastrar Animal*/
+H1{
+ margin-top: 20px;
+ margin-left: 30px;
+ font-size: 20px;
+ font-family: "Josefin Sans";
+ color: #1A202C;
+}
+
+/*Menu*/
+.topo {
+  background: #050A30;
+  width: 100%;
+  height: 60px;
+  position: relative;
+  
+}
+
+/*Input do nome*/
+#nome{
+  width: 300px;
+  height: 30px;
+  margin-left: 40px;
+
+}
+
+/*Posição das letras do menu*/
+.topo a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 15px 17px;
+  text-decoration: none;
+  font-size: 17px;
+  position: relative;
+  left: 60px;
+  top: 5px;
+}
+
+
+/*Div Cadastro*/
+#cadastro{
+  margin-top: -65px;
+  background-color: white;
+  position: absolute; 
+  width: 50%;
+  height: 500px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+
+}
+
+/*Onde insere a imagem do animal*/
+#fotoAnimal{
+  background-color: silver;
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  border-radius: 15px;
+  left: 65%;
+  margin-top: 25px;
+
+}
+
+/*Label especie, arrumando a posição*/
+#especie{
+  margin-left: 250px;
+
+}
+
+/*Input data, arrumando a posição*/
+#calendario{
+  margin-left: 65px;
+}
+
+/*Label data nascimento, arrumando a posição*/
+#data{
+  margin-left: 188px;
+}
+
+/*Botão cadastra*/
+#botao-cadastra{
+    background-color: #00AFB9;
+    border: none;
+    padding: 15px;
+    width: 600px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    position: relative;
+    right: -10%;
+            
+}
+
+/*Input´s*/
+.login{
+    width: 200px;
+    height: 30px;
+    margin-left: 40px;
+ 
+
+}
+
+/*Rodapé*/
+#rodape{
+  height: 70px;
+  width: 100%;
+  background-color: #050A30;
+  margin-top: 800px;
+
+}
+
+/*Escritura rodapé - 2022 Profile Pet*/
+#letras-rodape{
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    margin-top: 20px;
+    left: 25px;
+}
+
+/*Escritura rodape 2 - Instagram link*/
+#letras-rodape2{
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    margin-top: 20px;
+    left: 83%;
+}
+
+/*Icone do instagram*/
+#foto-rodape{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 80%;
+    margin-top: 10px;
+}
+

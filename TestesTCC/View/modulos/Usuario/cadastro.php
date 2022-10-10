@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="Scripts/style3.css">
 </head>
 <body></body>
-		<img src="Imagens/TelaCadastro/logo2.png" class="imagem">
+		<img src="Imagens/logo2.png" class="imagem">
 		<form action ="cadastrar-usuario" method ="post" class="formulario" >      
 			<!---Titulo-->
 			<h2>Crie sua Conta!</h2><br/>
@@ -27,7 +27,7 @@
 			<select name ="cidades" id="cidades" required class="Selects">
 				<option value="0" selected>Cidade</option>
 				<?php
-				foreach($consultaCID as $key => $consCid){
+				foreach($consultaCID->fetchAll as $key => $consCid){
 					$cid=($consCid['nomeCidade']);
 					$codCidade=($consCid['codCidade']);
 					echo "<option value=$codCidade>$cid</option>";

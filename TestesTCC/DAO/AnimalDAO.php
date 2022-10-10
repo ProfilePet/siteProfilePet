@@ -3,41 +3,34 @@ include_once('Model/Animal.php');
 $tabela = 'tbanimal';
 class AnimalDAO {
     public static function cadastrar(Animal $an){
-        include ('conn.php');
-        var_dump($an);
-        $retornoDB = $pdo->prepare("INSERT INTO tbanimal (nomeAnimal,imagemAnimal,nascimentoAnimal,ativoAnimal,codUsuario,codRacaAnimal,codTemperamento) 
-                                    VALUES (:n,:i,:na,:a,:c,:r,:t)");
-                                     
+        require_once ('conn.php');
+        $retornoDB = $pdo->prepare("INSERT INTO $tabela(codAnimal, nomeAnimal, imagemAnimal, nascimentoAnimal,
+                                    codUsuario, codRacaAnimal, temperamentoAnimal, ativoAnimal) 
+                                    VALUES (':ca', ':n', ':i', ':na'':c', ':r', ':t', ':a')");
+        
+        $retornoDB->bindValue(":ca", $an->getCodAnimal());
         $retornoDB->bindValue(":n", $an->getNomeAnimal());
         $retornoDB->bindValue(":i", $an->getImagemAnimal());
         $retornoDB->bindValue(":na", $an->getNascimentoAnimal());
-        $retornoDB->bindValue(":a", $an->getAtivoAnimal());
         $retornoDB->bindValue(":c", $an->getCodUsuarioA());
         $retornoDB->bindValue(":r", $an->getCodRacaAnimal());
         $retornoDB->bindValue(":t", $an->getTemperamentoAnimal());
+        $retornoDB->bindValue(":a", $an->getAtivoAnimal());
         $retornoDB->execute();
-        
         
         return $retornoDB;
     }
 
     public static function consultarMenu(){
-        require ('conn.php');
+        require_once ('conn.php');
         $retornoDB = $pdo->query("SELECT codAnimal, nomeAnimal, imagemAnimal FROM tbanimal /*WHERE codUsuario = $*/");
-        //$retornoDB->bindValue(":c", $c);
-
-        return $retornoDB;
-    }
-    public static function consultarEspecie(){
-        require ('conn.php');
-        $retornoDB = $pdo->query("SELECT * FROM tbespecie /*WHERE codUsuario = $*/");
         //$retornoDB->bindValue(":c", $c);
 
         return $retornoDB;
     }
 
     public static function consultarPerfil(Animal $an){
-        require ('conn.php');
+        require_once ('conn.php');
         $retornoDB = $pdo->query("SELECT * FROM $tabela WHERE codUsuario = :ca");
         $retornoDB->bindValue(":ca", $an->getCodAnimal());
         $retornoDB->execute();
