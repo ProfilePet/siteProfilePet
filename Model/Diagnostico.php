@@ -4,7 +4,7 @@ class Diagnostico {
     private $codAnimal;
     private $codEnfermidade;
     private $tratamento;
-    private $ativo;
+    private $ativoDiagnostico;
 
     public function getCodDiagnostico(){
         return $this->codDiagnostico;
@@ -42,12 +42,12 @@ class Diagnostico {
         return $this;
     }
 
-    public function getAtivo(){
-        return $this->ativo;
+    public function getAtivoDiagnostico(){
+        return $this->ativoDiagnostico;
     }
 
-    public function setAtivo($ativo){
-        $this->ativo = $ativo;
+    public function setAtivoDiagnostico($ativoDiagnostico){
+        $this->ativoDiagnostico = $ativoDiagnostico;
         return $this;
     }
 }
