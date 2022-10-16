@@ -1,0 +1,262 @@
+/* Add a black background color to the top navigation */
+.topo {
+  background:  linear-gradient(302.95deg, #21BDB8 0%, #280684 154.05%);
+  width: 50%;
+  height: 700px;
+  position:relative;
+  left: 50%;
+}
+
+/* Style the links inside the navigation bar */
+.topo a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 15px 17px;
+  text-decoration: none;
+  font-size: 17px;
+  position: relative;
+  left: 60px;
+  top: 30px;
+}
+
+/* Change the color of links on hover */
+.topo a:hover {
+  color: black;
+}
+
+#esquerda{
+    width: 50%;
+    height:700px;
+    background-color: white;
+    margin-top: -700px;
+}
+
+#descr{
+    font-size: 20px;
+   left: 12px;
+    font-family: "Josefin Sans";
+    color: #1A202C;
+
+}
+
+#imagem3{
+    height: 350px;
+    width: 400px ;
+    margin-top: 80px;
+    margin-left: 140px;
+
+}
+ 
+ #penultima{
+height: 700px;
+width: 50%;
+background-color: #00AFB9;
+position: absolute;
+right: 10px; 
+}
+
+ #antepenultima{
+   height: 700px;
+   width: 50%;
+   background-color: #5ce1e6;
+ }
+
+
+#dese{
+    height: 190px;
+    width:  190px;
+  
+   
+
+}
+
+#logo{
+    width: 200px;
+    height: 150px;
+    position: relative;
+    right: 26%;
+}
+
+#boasVindas{
+    font-size: 50px;
+    color: #1A202C;
+    font-family: "Josefin Sans";
+    right: -10%;
+    position: relative;
+}
+
+#frase{
+   position: relative;
+   right: -10%;
+   top: -25px;
+}
+
+#botao-cadastrar{
+    background-color: #00AFB9;
+    border: none;
+    padding: 15px;
+    width: 146px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    position: relative;
+    right: -10%;
+            
+}
+#botao-cadastrar:hover{
+    background-color: #ADD8E6;
+}
+
+#botao-login:hover{
+    background-color: #ADD8E6;
+}
+
+#botao-login{
+    background-color: #050A30;
+    border: none;
+    padding: 15px;
+    width: 146px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    position: relative;
+    right: -10%;
+            
+}
+
+#botao-login2{
+    background-color: #ADD8E6;
+    border: none;
+    padding: 15px;
+    width: 100px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    position: relative;
+    right: -20%;
+    top: 30px;
+    left: 25%;
+            
+}
+
+#tres{
+    background-color: yellow;
+    width: 100%;
+    height: 600px;
+    right: 30%;
+}
+
+#meio{
+    width: 100%;
+    height: 800px;
+   
+  
+}
+
+h1{
+    font-size: 40px;
+    color: #1A202C;
+    font-family: "Josefin Sans";
+    text-align: center;
+    
+
+}
+
+#sobree{
+    font-size: 20px;
+    float: left;
+    font-family: "Josefin Sans";
+    color: #1A202C;
+    margin-top: 70px;
+}
+
+#SO{
+    font-size: 40px;
+    float: left;
+    font-family: "Josefin Sans";
+    color: #1A202C;
+
+
+}
+
+
+
+#sobree1{
+    height: 300px;
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 130%;
+ 
+}
+
+
+
+
+
+#folheto{
+    background-color: #EDF2F7;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    left: -15%;
+    margin-top: 50px;
+    opacity: 0.64;
+    border-radius: 0px;
+}
+
+#folhefotos{
+    position: absolute;
+    width: 185.18px;
+    height: 201.48px;
+    left: 40px;
+    top: 30px;
+    filter: drop-shadow(0px 6px 20px rgba(0, 0, 0, 0.1));
+    border-radius: 4px;
+
+}
+
+#folhefotos2{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 80%;
+    top: 70%;
+    filter: drop-shadow(0px 6px 20px rgba(0, 0, 0, 0.1));
+    border-radius: 4px;
+
+}
+
+#folhefotos3{
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    left: 40%;
+    top: 20%;
+    filter: drop-shadow(0px 6px 20px rgba(0, 0, 0, 0.1));
+    border-radius: 4px;
+
+}
+
+#sobre{
+    font-size: 50px;
+    color: #1A202C;
+    font-family: "Josefin Sans";
+    right: -10%;
+    position: relative;
+}
+
+#rodape{
+position: absolute;
+width: 100%px;
+height: 120px;
+
+top: 1860px;
+
+background: blue;
+border-radius: 0px;
+}
