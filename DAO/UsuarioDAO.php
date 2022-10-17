@@ -4,17 +4,16 @@ $retornoDB;
 $tabela = 'tbusuario';
 include_once('Model/Usuario.php');
 
-
 class UsuarioDAO{
 
     function ConsultarEstado(){
-        include ('conn.php');
+        require ('conn.php');
         $retornoDB = $pdo->query("SELECT * FROM tbestado");
         return $retornoDB;
     }
     function ConsultarCidade(){
         //Usar Where com codEstado
-       include ('conn.php');
+        require ('conn.php');
         $retornoDB = $pdo->query("SELECT * FROM tbcidade");    
         return $retornoDB;
     }
@@ -24,14 +23,15 @@ class UsuarioDAO{
         $retornoDB = $pdo->prepare("INSERT INTO tbusuario(nome,email,celular,senha,ativo,codCidade,codEstado)VALUES
         (:n,:e,:c,:s,:a,:cid,:es)");
         $retornoDB->bindValue(":n", $us->getNomeUsuario());
-        //Colacado String Lower na Dao para Salvar email tudo minusculo
-        $retornoDB->bindValue(":e", strtolower($us->getEmail()));
+        $retornoDB->bindValue(":e", $us->getEmail());
         $retornoDB->bindValue(":c", $us->getCelular());
         $retornoDB->bindValue(":s", $us->getSenha());
         $retornoDB->bindValue(":a", $us->getAtivo());
         $retornoDB->bindValue(":cid", $us->getCidade());
         $retornoDB->bindValue(":es", $us->getEstado());
-        $retornoDB->execute();  
+        $retornoDB->execute();
+        //Não testado
+        var_dump($pdo);    
         return $retornoDB;
     }
     public static function Editar(Usuario $us){

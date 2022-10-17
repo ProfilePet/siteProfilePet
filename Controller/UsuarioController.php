@@ -4,9 +4,6 @@
         public function erro(){
             include 'View/modulos/Usuario/TelaErro.php';
         }
-        public function telaPrincipal(){
-            include('View/modulos/Usuario/sobre.html');
-        }
         public function telaCadastrar(){
             include_once('DAO/UsuarioDAO.php');
             $objUsuarioDao = new UsuarioDAO();
@@ -36,7 +33,6 @@
                     $objUsuario->setCidade($_POST['cidades']);
                     $objUsuario->setEstado($_POST['estados']);
             $retorno = UsuarioDAO::Cadastrar($objUsuario);
-            include('View/modulos/Usuario/sobre.html');
 
 
         }
@@ -44,7 +40,7 @@
             include_once('Model/Usuario.php');
             include_once('DAO/UsuarioDAO.php');
             $objUsuario = new Usuario();
-                    $objUsuario->setCodUsuario(21);
+                    $objUsuario->setCodUsuario(10);
                     $objUsuario->setNomeUsuario('testado');
                     $objUsuario->setEmail('testado@gmail.com');
                     $objUsuario->setCelular('1123477789234');
@@ -66,11 +62,10 @@
             include_once('Model/Usuario.php');
             
             $objUsuario = New Usuario();
-            $objUsuarioDao = new UsuarioDAO();
         
-            $objUsuario->setEmail($_POST['txtEmail']);
+            $objUsuario->setEmail(strtolower($_POST['txtEmail']));
             $senha = md5($_POST['txtSenha']);
-            $verifica =$objUsuarioDao->Verifica($objUsuario);
+            $verifica = UsuarioDAO::Verifica($objUsuario);
             
             $linhasRetorno=$verifica->rowCount();
             if ($linhasRetorno!=0){

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.animal{
+    background-color: blue;
+    margin: 3%;
+}
+button.btnEditar{
+    background-color: rgb(40, 161, 121);
+    margin-left: 95%;
+    margin-top: 0%;
+}
+button.btnEditar:hover{
+    background-color: rgb(36, 138, 104);
+    margin-left: 95%;
+    margin-top: 0%;
+    transform: scaleX(1.2);
+}
+.btnAnimal{
+    width: 95%;
+    display: flex;
+    height: 70%;
+    background-color: brown;
+}
+.animal img{
+    width: 10%;
+    display: flex;
+    height: 70%;
+    background-color: brown;
+}
+.animal img:hover{
+    width: 10%;
+    display: flex;
+    height: 70%;
+    background-color: brown;
+    transform: scale(1.2);
+}
+

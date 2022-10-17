@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="Scripts/style3.css">
 </head>
 <body></body>
-		<img src="Imagens/TelaCadastro/logo2.png" class="imagem">
+		<img src="Imagens/logo2.png" class="imagem">
 		<form action ="cadastrar-usuario" method ="post" class="formulario" >      
 			<!---Titulo-->
 			<h2>Crie sua Conta!</h2><br/>
@@ -43,7 +43,7 @@
 					//codigo da Select
 					//Deixar Value com codEstad
 				foreach($consultaES as $key => $consES){
-					$uf=($consES['uf']);
+					$uf=($consES['ufEstado']);
 					$codCidade=($consES['codEstado']);
 					echo "<option value=$codCidade>$uf</option>";
 				}
