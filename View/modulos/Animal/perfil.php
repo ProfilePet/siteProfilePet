@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        echo"$codAnimal";
+        //echo"$codAnimal";
     ?>
 </body>
 </html>
