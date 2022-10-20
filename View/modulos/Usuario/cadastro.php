@@ -7,7 +7,25 @@
 	<link rel="stylesheet" href="Scripts/style3.css">
 </head>
 <body></body>
-		<img src="Imagens/logo2.png" class="imagem">
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+function preencherCidades(){
+    var estado = $("#estados").val();
+	var dados = "&dados="+estado;
+	//console.log($('#estados'))
+	var url_atual = window.location.href;
+	//alert(url_atual);
+	$.ajax({
+		url:'Controller/CidadeController.php?estado='+estado,
+		success:function(data) {
+            $("#cidades").html(data);
+			$("#cidades").removeAttr('disabled');
+			}
+		});
+		}
+</script>
+		<img src="Imagens/TelaCadastro/logo2.png" class="imagem">
 		<form action ="cadastrar-usuario" method ="post" class="formulario" >      
 			<!---Titulo-->
 			<h2>Crie sua Conta!</h2><br/>
@@ -24,30 +42,20 @@
 			<br/>
 			
 			<!--Cidade-->
-			<select name ="cidades" id="cidades" required class="Selects">
-				<option value="0" selected>Cidade</option>
-				<?php
-				foreach($consultaCID as $key => $consCid){
-					$cid=($consCid['nomeCidade']);
-					$codCidade=($consCid['codCidade']);
-					echo "<option value=$codCidade>$cid</option>";
-				}
-				
-				?>
+			<select  id="cidades" required class="Selects" disabled>
+				<option selected>Cidade</option>
 			</select>
 			
 			<!--Select Estado-->
-			<select name="estados" id="estados" onchange="atualizar()" required class="Selects">
-				<option value="0" selected>UF</option>
-				<?php
-					//codigo da Select
-					//Deixar Value com codEstad
+			<select id="estados" required onchange="preencherCidades()" required class="Selects">
+			<option selected>Estado</option>
+			<?php
 				foreach($consultaES as $key => $consES){
-					$uf=($consES['ufEstado']);
-					$codCidade=($consES['codEstado']);
-					echo "<option value=$codCidade>$uf</option>";
+					$uf=($consES['uf']);
+					$codEstado=($consES['codEstado']);
+					echo "<option value=$codEstado>$uf</option>";
 				}
-				?>
+			?>
 			</select>
 			<br/>
 
@@ -67,6 +75,5 @@
 			<input type="reset" name="btnLimpar" placeholder="Limpar" class="botoes">	
 					
 		</form>
-	<script src="Scripts/select.js"></script>
 </body>
 </html>
