@@ -22,12 +22,12 @@ class MedicacaoDiag{
         return $this;
     }
  
-    public function getNomeMedicacao(){
-        return $this->nomeMedicacao;
+    public function getcodDiagnostico(){
+        return $this->codDiagnostico;
     }
 
-    public function setcodDiagnostico($nomeMedicacao){
-        $this->nomeMedicacao = $nomeMedicacao;
+    public function setcodDiagnostico($codDiagnostico){
+        $this->codDiagnostico = $codDiagnostico;
         return $this;
     }
 }
