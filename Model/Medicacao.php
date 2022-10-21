@@ -1,8 +1,8 @@
 <?php
-class Medicacao{
+class MedicacaoDiag{
     private $codMedDiag;
     private $codMedicacao;
-    private $nomeMedicacao;
+    private $codDiagnostico;
 
     public function getCodMedDiag(){
         return $this->codMedDiag;
@@ -26,7 +26,7 @@ class Medicacao{
         return $this->nomeMedicacao;
     }
 
-    public function setNomeMedicacao($nomeMedicacao){
+    public function setcodDiagnostico($nomeMedicacao){
         $this->nomeMedicacao = $nomeMedicacao;
         return $this;
     }

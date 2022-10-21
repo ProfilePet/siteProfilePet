@@ -14,8 +14,17 @@ class MedicacaoDAO{
         return $retornoDB;
     }
 
-    public static function cadastrarMedicacaoDiag(Medicacao $med)
-    {
-        # code...
+    public static function cadastrarMedicacaoDiag(MedicacaoDiag $med,){
+        include('conn.php');
+        $retornoDB = $pdo->prepare("INSERT INTO tbmedicacaodiagnostico(codMedicacao, codDiagnostico) VALUES (':cm',':cd')");
+        $retornoDB->bindValue(":cm", $med->getCodMedicacao());
+        $retornoDB->bindValue(":cm", $dia->getCodDiagnostico());
+        $retornoDB->execute();  
+        return $retornoDB;
+    }
+
+    public static function excluirMedDiag(MedicacaoDiag $med){
+        include('conn.php');
+        $retornoDB = $pdo->prepare("DELETE FROM tbmedicacaodiagnostico WHERE codMedicacaoDiagnostico = :cmd");
     }
 }
