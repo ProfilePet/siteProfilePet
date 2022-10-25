@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Out-2022 às 22:21
+-- Tempo de geração: 25-Out-2022 às 22:34
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.12
 
@@ -6173,10 +6173,10 @@ CREATE TABLE `tblembreteconsulta` (
   `codConsulta` int(11) NOT NULL,
   `dataConsulta` date NOT NULL,
   `horaConsulta` time NOT NULL,
-  `nomeClinica` varchar(100) DEFAULT NULL,
-  `localConsulta` varchar(300) NOT NULL,
-  `nomeVeterinario` varchar(100) NOT NULL,
-  `tipoConsulta` varchar(50) NOT NULL,
+  `nomeClinica` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `localConsulta` varchar(300) CHARACTER SET utf8mb4 NOT NULL,
+  `nomeVeterinario` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+  `tipoConsulta` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
   `codDiagnostico` int(11) NOT NULL,
   `ativoLembreteConsulta` tinyint(1) NOT NULL,
   `codAnimal` int(11) NOT NULL
@@ -6193,7 +6193,7 @@ CREATE TABLE `tblembretemedicacao` (
   `dataInicial` date NOT NULL,
   `dataFinal` date NOT NULL,
   `hora` time NOT NULL,
-  `repeticaoLembrete` varchar(7) NOT NULL,
+  `repeticaoLembrete` varchar(7) CHARACTER SET utf8mb4 NOT NULL,
   `codMedicacao` int(11) NOT NULL,
   `codAnimal` int(11) NOT NULL,
   `ativoLembreteMedicacao` tinyint(1) NOT NULL
