@@ -7,17 +7,21 @@
             $consultaTemperamento = $consultaTemperamento->fetchAll();
             $consultaEspecie = AnimalDAO::consultarEspecie();
             $consultaEspecie = $consultaEspecie->fetchAll();
+            session_start();
+            $codUsu=$_SESSION['codUsuario'];
             include('View/modulos/Animal/cadastro.php');
             
         }
         public function cadastrar(){
             include('Model/Animal.php');
             include('DAO/AnimalDAO.php');
+            session_start();
+            $codUsu=$_SESSION['codUsuario'];
             $objAnimal = new Animal();
             $objAnimal->setNomeAnimal($_POST['txtNomeAnimal']);
             $objAnimal->setNascimentoAnimal($_POST['txtCalendario']);
             $objAnimal->setAtivoAnimal(1);
-            $objAnimal->setCodUsuarioA(21);
+            $objAnimal->setCodUsuarioA($codUsu);
             $objAnimal->setCodRacaAnimal($_POST['txtRaca']);
             $objAnimal->setTemperamentoAnimal($_POST['txtTemperamento']);
             //Pegando Imagem do Pet e Renomeando e Mando Para Pasta Imagens/PetPhoto
@@ -34,21 +38,39 @@
 
                     }else{
                         echo "Failed to upload image";
+                        $objAnimal->setImagemAnimal('Imagens/PetPhoto/test.jpg');
                 }
             }
             //var_dump($objAnimal);
             $retorno = AnimalDAO::cadastrar($objAnimal);
-            echo"a";
             echo "
-            <script type=\"text/javascript\">
-            window.location='tela-consulta-animal';
-            </script>
-            ";
-
+            <body></body><script src=//cdn.jsdelivr.net/npm/sweetalert2@11></script>
+                    <script type=\"text/javascript\">
+                    Swal.fire({
+                        title: 'Animal Cadastrado Com Sucesso.',
+                        width: 600,
+                        padding: '3em',
+                        color: '#716add',
+                        background: '#fff url(/images/trees.png)',
+                        backdrop: `
+                          rgba(0,0,123,0.4)
+                          url(/images/nyan-cat.gif)
+                          left top
+                          no-repeat
+                        `
+                      }).then((result) =>{
+                        if (result.isConfirmed){
+                            window.location='tela-consulta-animal'
+                        }
+                    })
+                    </script>
+                    ";
         }
         public function telaConsultar(){
             include('DAO/AnimalDAO.php');
-            $consultaAnimais = AnimalDAO::consultarMenu(21);
+            session_start();
+            $codUsu=$_SESSION['codUsuario'];
+            $consultaAnimais = AnimalDAO::consultarMenu($codUsu);
             $consultaAnimais = $consultaAnimais->fetchAll();
             include('View/modulos/Animal/consulta.php');
         }
@@ -74,7 +96,6 @@
             $objAnimal->setCodRacaAnimal($_POST['txtRaca']);
             $objAnimal->setNascimentoAnimal($_POST['txtCalendario']);
             $objAnimal->setAtivoAnimal(1);
-            $objAnimal->setCodUsuarioA(21);
             $objAnimal->setTemperamentoAnimal(1);
             if (isset($_POST['btnExcluir'])){
                 $retorno =  AnimalDAO::deletarAnimal($objAnimal);
@@ -82,8 +103,7 @@
                 <script type=\"text/javascript\">
                 alert(\"Animal Excluido com Sucesso.\");
                 window.location='tela-consulta-animal';
-                </script>
-                ";
+                </script> ";
             }
             else{
             if(isset($_FILES['txtImagem']))

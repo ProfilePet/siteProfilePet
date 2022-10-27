@@ -23,10 +23,10 @@ class DiagnosticoDAO{
         return $retornoDB;
     }
 
-    public static function consultarDiagnostico(Diagnostico $dia){
-        include('conn.php');
-        $retornoDB = $pdo->query("SELECT codDiagnostico, tratamento, nomeEnfermidade, ativoDiagnostico FROM tbdiagnostico INNER JOIN tbEnfermidade ON tbdiagnostico.codEnfermidade = tbEnfermidade.codEnfermidade WHERE codAnimal = :ca");
-        $retornoDB->bindValue(":ca", $dia->getCodAnimal());
+    public static function consultarDiagnostico($codA){
+        include('../conn.php');
+        $retornoDB = $pdo->prepare("SELECT codDiagnostico, tratamento, nomeEnfermidade, ativoDiagnostico FROM tbdiagnostico INNER JOIN tbEnfermidade ON tbdiagnostico.codEnfermidade = tbEnfermidade.codEnfermidade WHERE codAnimal = :ca;");
+        $retornoDB->bindValue(":ca", $codA);
         $retornoDB->execute();
         return $retornoDB;
     }

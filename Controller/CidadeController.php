@@ -1,9 +1,9 @@
 <?php
-            include_once('../DAO/UsuarioDAO.php');
-            $objUsuarioDao2 = new UsuarioDAO();
+            include('../DAO/UsuarioDAO.php');
+            $objUsuarioDao = new UsuarioDAO();
             if (isset($_GET['estado'])){
             $id = $_GET['estado'];
-            $consultaCID = $objUsuarioDao2->ConsultarCidade($id);
+            $consultaCID = $objUsuarioDao->ConsultarCidade($id);
             $consultaCID = $consultaCID->fetchAll();
             foreach($consultaCID as $key => $consCid){
                 $cid=($consCid['nomeCidade']);

@@ -15,9 +15,8 @@ class AnimalDAO {
         $retornoDB->bindValue(":c", $an->getCodUsuarioA());
         $retornoDB->bindValue(":r", $an->getCodRacaAnimal());
         $retornoDB->bindValue(":t", $an->getTemperamentoAnimal());
-        var_dump($an);
+        echo"a";
         $retornoDB->execute();
-        
         
         return $retornoDB;
     }
@@ -34,6 +33,14 @@ class AnimalDAO {
         include ('conn.php');
         $retornoDB = $pdo->query("SELECT * FROM tbespecie /*WHERE codUsuario = $*/");
         //$retornoDB->bindValue(":c", $c);
+
+        return $retornoDB;
+    }
+    public static function consultarRaca($esp){
+        include ('../conn.php');
+        $retornoDB = $pdo->prepare("SELECT * FROM tbraca WHERE codEspecieAnimal = :es");
+        $retornoDB->bindValue(":es", $esp);
+        $retornoDB->execute();
 
         return $retornoDB;
     }
@@ -56,7 +63,6 @@ class AnimalDAO {
 
     public static function editarAnimal(Animal $an){//Edita os Atributos do Animal no Banco
         require_once('conn.php');
-        var_dump($an);
         $retornoDB = $pdo->prepare("UPDATE tbanimal SET nomeAnimal = :n, imagemAnimal = :i, nascimentoAnimal = :na,
                                     codRacaAnimal = :r, codTemperamento = :t WHERE codAnimal = :ca");
         $retornoDB->bindValue(":n", $an->getNomeAnimal());

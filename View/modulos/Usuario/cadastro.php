@@ -12,7 +12,6 @@
 <script>
 function preencherCidades(){
     var estado = $("#estados").val();
-	var dados = "&dados="+estado;
 	//console.log($('#estados'))
 	var url_atual = window.location.href;
 	//alert(url_atual);
@@ -42,14 +41,16 @@ function preencherCidades(){
 			<br/>
 			
 			<!--Cidade-->
-			<select  id="cidades" required class="Selects" disabled>
+			<select  id="cidades" name="cidades" required class="Selects" disabled>
 				<option selected>Cidade</option>
 			</select>
 			
 			<!--Select Estado-->
-			<select id="estados" required onchange="preencherCidades()" required class="Selects">
+			<select id="estados" name="estados" required onchange="preencherCidades()" required class="Selects">
 			<option selected>Estado</option>
 			<?php
+			 session_start();
+			 $_SESSION['codUsuario']=$codUsu;
 				foreach($consultaES as $key => $consES){
 					$uf=($consES['uf']);
 					$codEstado=($consES['codEstado']);

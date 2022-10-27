@@ -4,8 +4,16 @@
         public function erro(){
             include 'View/modulos/Usuario/TelaErro.php';
         }
-        public function telaPrincipal(){
-            include('View/modulos/Usuario/sobre.html');
+        public function telaSobre(){
+            include 'View/modulos/Usuario/sobre.html';
+        }
+        public function telaPrincipal(Usuario $us){
+            include_once('DAO/UsuarioDAO.php');
+            $verifica =UsuarioDAO::Verifica($us);
+            while ($linha=$verifica->fetch(PDO::FETCH_ASSOC)){
+                $us->setcodUsuario($linha['codUsuario']);
+            }
+            include('View/modulos/Usuario/tela_principal.php');
         }
         public function telaCadastrar(){
             include_once('DAO/UsuarioDAO.php');
@@ -34,41 +42,8 @@
                     $objUsuario->setCidade($_POST['cidades']);
                     $objUsuario->setEstado($_POST['estados']);
             $retorno = UsuarioDAO::Cadastrar($objUsuario);
-            include('View/modulos/Usuario/sobre.html');
+            $this->telaPrincipal($objUsuario);
 
-
-        }
-        public function pesquisaEstado(){
-            include_once('DAO/UsuarioDAO.php');
-            $objUsuarioDao = new UsuarioDAO();
-            $consultaES = $objUsuarioDao->ConsultarEstado();
-            $consultaES = $consultaES->fetchAll();
-            foreach($consultaES as $key => $consES){
-                $uf=($consES['uf']);
-                $codEstado=($consES['codEstado']);
-                echo "<option value=$codEstado>$uf</option>";
-            }
-
-        }
-        public function pesquisaCidade(){
-            include_once('DAO/UsuarioDAO.php');
-            $objUsuarioDao = new UsuarioDAO();
-            if (isset($_POST['estado'])){
-            $id = $_POST['estado'];
-            echo"<script type=\"text/javascript\">
-                    alert(\"$id.\");
-                    console.log($id);
-                    </script>";
-            $consultaCID = $objUsuarioDao->ConsultarCidade($id);
-            $consultaCID = $consultaCID->fetchAll();
-            foreach($consultaCID as $key => $consCid){
-                $cid=($consCid['nomeCidade']);
-                $codCidade=($consCid['codCidade']);
-                //echo("<option value=$codCidade>$cid</option>".PHP_EOL);
-                $option.="<option value=$codCidade>$cid</option>".PHP_EOL;
-            }
-            echo $option;
-        }
 
         }
         public function editar(){
@@ -126,9 +101,7 @@
                 }
                 else {
                     //Mandando Codigo do Usuario Para outra tela
-                    session_start();
-                    $_SESSION['codUsuario'] = $objUsuario->getCodUsuario();
-                    include 'View/modulos/Usuario/sobre.html';
+                    $this->telaPrincipal($objUsuario);
                 }    
             }
             else{

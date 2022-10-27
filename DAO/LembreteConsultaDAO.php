@@ -48,11 +48,10 @@ class LembreteConsultaDAO {
     }
 
     public static function consultaMenu($codA){
-        require_once ('conn.php');
-        $retornoDB = $pdo->prepare("SELECT `codConsulta`, `dataConsulta`, `horaConsulta`, `nomeClinica`, `localConsulta`, `nomeVeterinario`, `tipoConsulta` FROM `tblembreteconsulta` WHERE codAnimal = ':ca'");
+        include ('../conn.php');
+        $retornoDB = $pdo->prepare("SELECT codConsulta, dataConsulta,horaConsulta,localConsulta,nomeVeterinario, tipoConsulta FROM tblembreteconsulta WHERE codAnimal = :ca");
         $retornoDB->bindValue(":ca",$codA);
         $retornoDB->execute();  
         return $retornoDB;
     }
-    
 }

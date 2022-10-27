@@ -13,7 +13,7 @@ class UsuarioDAO{
         return $retornoDB;
     }
     function ConsultarCidade($cid){
-        //Usar Where com codEstado
+        //conn com .. porque está sendo acessada pela CidadeController
        include ('../conn.php');
         $retornoDB = $pdo->prepare("SELECT * FROM tbcidade WHERE codEstado = :cid");
         $retornoDB->bindValue(":cid", $cid);
@@ -22,7 +22,7 @@ class UsuarioDAO{
     }
     public static function Cadastrar(Usuario $us){
         //Cadastro feito Usando o Objeto da Model que é Enviado pela Controller
-        require_once ('conn.php');
+        include ('conn.php');
         $retornoDB = $pdo->prepare("INSERT INTO tbusuario(nome,email,celular,senha,ativo,codCidade,codEstado)VALUES
         (:n,:e,:c,:s,:a,:cid,:es)");
         $retornoDB->bindValue(":n", $us->getNomeUsuario());
@@ -37,7 +37,7 @@ class UsuarioDAO{
         return $retornoDB;
     }
     public static function Editar(Usuario $us){
-        require_once ('conn.php');
+        include ('conn.php');
         $retornoDB = $pdo->prepare("UPDATE tbusuario SET nome=:n,email=:e,
         celular=:c,senha=:s,ativo=:a,codCidade=:cid,
         codEstado=:es WHERE codUsuario = :cod");
@@ -53,7 +53,7 @@ class UsuarioDAO{
         return $retornoDB;
     }
     public static function Verifica(Usuario $us){
-        require_once ('conn.php');
+        include ('conn.php');
         $retornoDB = $pdo->query("SELECT * FROM tbusuario WHERE email ='{$us->getEmail()}'");    
         return $retornoDB;
     }
