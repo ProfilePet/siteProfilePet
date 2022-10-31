@@ -2,7 +2,7 @@
 
 $retornoDB;
 $tabela = 'tbusuario';
-include_once('Model/Usuario.php');
+include('Model/Usuario.php');
 
 
 class UsuarioDAO{

@@ -1,8 +1,8 @@
 <?php
     $host = "localhost";
     $user = "root";
-    $pass = "usbw";
-    $banco = "tcctest";
+    $pass = "";
+    $banco = "bdprofilepet";
 
     try{
     $pdo = new PDO ("mysql:dbname=$banco;host=$host","$user","$pass");

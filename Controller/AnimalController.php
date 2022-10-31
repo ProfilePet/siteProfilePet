@@ -15,7 +15,7 @@ class AnimalController
     }
     public function cadastrar()
     {
-        include('Model/Animal.php');
+        include('../Model/Animal.php');
         include('DAO/AnimalDAO.php');
 
         session_start();
@@ -83,7 +83,7 @@ class AnimalController
     public function telaEditar($cod)
     {
         include('Model/Animal.php');
-        include_once('DAO/AnimalDAO.php');
+        include('DAO/AnimalDAO.php');
         $consultaAnimal = AnimalDAO::consultarPerfil($cod);
         $consultaAnimal = $consultaAnimal->fetchAll();
         $consultaEspecie = AnimalDAO::consultarEspecie();
@@ -95,7 +95,7 @@ class AnimalController
     public function editar()
     {
         include('Model/Animal.php');
-        include_once('DAO/AnimalDAO.php');
+        include('DAO/AnimalDAO.php');
         session_start();
         $objAnimal = new Animal();
         $objAnimal->setCodAnimal($_SESSION['codAnimal']);
@@ -137,7 +137,7 @@ class AnimalController
 
     public function telaPerfil($cod)
     {
-        include_once('DAO/AnimalDAO.php');
+        include('DAO/AnimalDAO.php');
         $consultaAnimal = AnimalDAO::consultarPerfil($cod);
         $consultaAnimal = $consultaAnimal->fetchAll();
         var_dump($consultaAnimal);

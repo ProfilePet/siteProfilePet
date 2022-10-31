@@ -55,7 +55,7 @@ if(isset($_GET['url']))
         //Geral
         case 'tela-principal':
             $grl = new UsuarioController();
-            $grl->telaPrincipal();
+            $grl->telaSobre();
         break;
 
         default:
@@ -73,6 +73,5 @@ if(isset($_GET['url']))
 }
 else{
     $usu = new UsuarioController();
-    $usu->telaPrincipal();
+    $usu->telaSobre();
 }
-?>

@@ -1,5 +1,5 @@
 <?php
-include_once('../DAO/UsuarioDAO.php');
+include('../DAO/UsuarioDAO.php');
 $id = $_GET['estado'];
 echo "
 <script type=\"text/javascript\">

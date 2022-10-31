@@ -8,7 +8,7 @@
             include 'View/modulos/Usuario/sobre.html';
         }
         public function telaPrincipal(Usuario $us){
-            include_once('DAO/UsuarioDAO.php');
+            include('DAO/UsuarioDAO.php');
             $verifica =UsuarioDAO::Verifica($us);
             while ($linha=$verifica->fetch(PDO::FETCH_ASSOC)){
                 $us->setcodUsuario($linha['codUsuario']);
@@ -16,7 +16,7 @@
             include('View/modulos/Usuario/tela_principal.php');
         }
         public function telaCadastrar(){
-            include_once('DAO/UsuarioDAO.php');
+            include('DAO/UsuarioDAO.php');
             $objUsuarioDao = new UsuarioDAO();
             $consultaES = $objUsuarioDao->ConsultarEstado();
             $consultaES = $consultaES->fetchAll();
@@ -28,8 +28,8 @@
             include 'View/modulos/Usuario/cadastro.php';
         }
         public function cadastrar(){
-            include_once('Model/Usuario.php');
-            include_once('DAO/UsuarioDAO.php');
+            include('Model/Usuario.php');
+            include('DAO/UsuarioDAO.php');
             $objUsuario = new Usuario();
 
             //cadastro usuario
@@ -47,8 +47,8 @@
 
         }
         public function editar(){
-            include_once('Model/Usuario.php');
-            include_once('DAO/UsuarioDAO.php');
+            include('Model/Usuario.php');
+            include('DAO/UsuarioDAO.php');
             $objUsuario = new Usuario();
                     $objUsuario->setCodUsuario(21);
                     $objUsuario->setNomeUsuario('testado');
@@ -68,8 +68,8 @@
             include 'View/modulos/Usuario/login.php';
         }
         public function logar(){
-            include_once('DAO/UsuarioDAO.php');
-            include_once('Model/Usuario.php');
+            include('DAO/UsuarioDAO.php');
+            include('Model/Usuario.php');
             
             $objUsuario = New Usuario();
             $objUsuarioDao = new UsuarioDAO();

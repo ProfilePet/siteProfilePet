@@ -1,5 +1,5 @@
 <?php
-include_once('Model/LembreteConsulta.php');
+include('Model/LembreteConsulta.php');
 class LembreteConsultaDAO {
     public static function cadastrar(LembreteConsulta $consulta){
         require_once ('conn.php');

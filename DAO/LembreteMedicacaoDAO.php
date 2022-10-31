@@ -1,5 +1,5 @@
 <?php
-include_once('Model/LembreteMedicacao.php');
+include('Model/LembreteMedicacao.php');
 class LembreteMedicacaoDAO{
     public static function cadastrar(LembreteMedicacao $lm){
         include ('conn.php');

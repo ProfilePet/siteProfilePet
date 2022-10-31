@@ -1,10 +1,10 @@
 <?php
-include_once('Model/Animal.php');
 class AnimalDAO
 {
     //Insere as informações do animal no Banco
     public static function cadastrar(Animal $an)
     {
+        include('Model/Animal.php');
         include('conn.php');
         $retornoDB = $pdo->prepare("INSERT INTO tbanimal (nomeAnimal,imagemAnimal,nascimentoAnimal,ativoAnimal,codUsuario,codRacaAnimal,codTemperamento) VALUES (:n,:i,:na,:a,:c,:r,:t)");
         $retornoDB->bindValue(":n", $an->getNomeAnimal());
@@ -58,7 +58,7 @@ class AnimalDAO
     public static function consultarPerfil($cod)
     {
         require('conn.php');
-        $retornoDB = $pdo->prepare("SELECT nomeAnimal, imagemAnimal, nascimentoAnimal, nomeRacaAnimal, temperamento FROM tbanimal INNER JOIN tbRaca ON tbRaca.codRaca = tbAnimal.codRaca INNER JOIN tbTemperamento ON tbAnimal.codTemperamento = tbTemperamento.codTemperamento WHERE codAnimal = :ca");
+        $retornoDB = $pdo->prepare("SELECT codAnimal, nomeAnimal, imagemAnimal, nascimentoAnimal, nomeRacaAnimal, temperamento FROM tbanimal INNER JOIN tbRaca ON tbRaca.codRacaAnimal = tbAnimal.codRacaAnimal INNER JOIN tbTemperamento ON tbAnimal.codTemperamento = tbTemperamento.codTemperamento WHERE codAnimal = :ca");
         $retornoDB->bindValue(":ca", $cod);
         $retornoDB->execute();
         return $retornoDB;

@@ -61,7 +61,7 @@ function preencherRaca(){
 						 session_start();
 						 $_SESSION['codUsuario']=$codUsu;
 				foreach($consultaTemperamento as $key => $consTemp){
-					$codTemp=($consTemp['codTemperamentoAnimal']);
+					$codTemp=($consTemp['codTemperamento']);
 					$temp=($consTemp['temperamento']);
 					echo "<option value=$codTemp>$temp</option>";
 				}
