@@ -45,77 +45,7 @@ class AnimalController
                 $objAnimal->setImagemAnimal('Imagens/PetPhoto/test.jpg');
             }
         }
-        public function cadastrar(){
-            include('Model/Animal.php');
-            include('DAO/AnimalDAO.php');
-            session_start();
-            $codigo=$_SESSION['codigoUsu'];
-            $objAnimal = new Animal();
-            $objAnimal->setNomeAnimal($_POST['txtNomeAnimal']);
-            $objAnimal->setNascimentoAnimal($_POST['txtCalendario']);
-            $objAnimal->setAtivoAnimal(1);
-            $objAnimal->setCodUsuarioA($codigo);
-            $objAnimal->setCodRacaAnimal($_POST['txtRaca']);
-            $objAnimal->setTemperamentoAnimal($_POST['txtTemperamento']);
-            //Pegando Imagem do Pet e Renomeando e Mando Para Pasta Imagens/PetPhoto
-            if(isset($_FILES['txtImagem']))
-            {   
-                $arquivo = $_FILES["txtImagem"]["name"];
-                $tempname = $_FILES["txtImagem"]["tmp_name"];             
-                $extensao = pathinfo($arquivo,PATHINFO_EXTENSION);
-                $pasta = "Imagens/PetPhoto/"."{$objAnimal->getCodUsuarioA()}$arquivo";
-
-                    if (move_uploaded_file($tempname, $pasta))  {
-                        echo "Image uploaded successfully";
-                        $objAnimal->setImagemAnimal($pasta);
-
-                    }else{
-                        echo "Failed to upload image";
-                        $objAnimal->setImagemAnimal('Imagens/PetPhoto/test.jpg');
-                }
-            }
-            //var_dump($objAnimal);
-            $retorno = AnimalDAO::cadastrar($objAnimal);
-            echo "
-            <body></body><script src=//cdn.jsdelivr.net/npm/sweetalert2@11></script>
-                    <script type=\"text/javascript\">
-                    Swal.fire({
-                        title: 'Animal Cadastrado Com Sucesso.',
-                        width: 600,
-                        padding: '3em',
-                        color: '#716add',
-                        background: '#fff url(/images/trees.png)',
-                        backdrop: `
-                          rgba(0,0,123,0.4)
-                          url(/images/nyan-cat.gif)
-                          left top
-                          no-repeat
-                        `
-                      }).then((result) =>{
-                        if (result.isConfirmed){
-                            window.location='tela-consulta-animal'
-                        }
-                    })
-                    </script>
-                    ";
-        }
-        public function telaConsultar(){
-            session_start();
-            $codigo=$_SESSION['codigoUsu'];
-            include('DAO/AnimalDAO.php');
-            $consultaAnimais = AnimalDAO::consultarMenu($codigo);
-            $consultaAnimais = $consultaAnimais->fetchAll();
-            include('View/modulos/Animal/consulta.php');
-        }
-        public function telaEditar($cod){
-            include('../Model/Animal.php');
-            include_once('DAO/AnimalDAO.php');
-            $consultaAnimal = AnimalDAO::consultarPerfil($cod);
-            $consultaAnimal = $consultaAnimal->fetchAll();
-            $consultaEspecie = AnimalDAO::consultarEspecie();
-            $consultaEspecie = $consultaEspecie->fetchAll();
-            //var_dump($consultaAnimal);
-            include('View/modulos/Animal/editar.php');
+    }
 
     public function telaConsultar()
     {
@@ -198,32 +128,6 @@ class AnimalController
                     </script>
                     ";
                 }
-        }
-        public function telaPerfil($cod){
-            include_once('DAO/AnimalDAO.php');
-            $consultaAnimal = AnimalDAO::consultarPerfil($cod);
-            $consultaAnimal = $consultaAnimal->fetchAll();
-            //var_dump($consultaAnimal);
-            include('View/modulos/Animal/perfil.php');
-        }
-        public function consultas_animal(){
-            var_dump($_POST);
-        }
-        public function consultarConsulta($codCons){
-            var_dump($codCons);
-        }
-        public function editarConsulta($codCons){
-            include('DAO/LembreteConsultaDAO.php');
-            echo"a";
-            $consultaConsulta= LembreteConsultaDAO::consultaDetalhada($codCons);
-            echo"a";
-            $consultaConsulta = $consultaConsulta->fetchAll();
-
-            var_dump($consultaConsulta);
-        }
-        public function telaCadastroConsulta($codAnimal){
-            var_dump($codAnimal);
-        }
     }
 
     public function telaPerfil($cod)

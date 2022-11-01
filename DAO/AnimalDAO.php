@@ -44,13 +44,6 @@ class AnimalDAO {
 
         return $retornoDB;
     }
-    public static function consultarTemperamento(){
-        include ('conn.php');
-        $retornoDB = $pdo->query("SELECT * FROM tbtemperamento /*WHERE codUsuario = $*/");
-        //$retornoDB->bindValue(":c", $c);
-
-        return $retornoDB;
-    }
 
     //Consulta todos os Temperamentos da tabela padrão
     public static function consultarTemperamento()
