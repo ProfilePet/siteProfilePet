@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../Scripts/style5.css">
     <title>Document</title>
 </head>
 <body>
@@ -16,7 +17,7 @@ function preencherEscolha(){
     
 	console.log(escolhas);
 	$.ajax({
-		url:'Controller/PerfilController.php?escolha='+escolhas+'&codigo='+codigo,
+		url:'../Controller/PerfilController.php?escolha='+escolhas+'&codigo='+codigo,
 		success:function(data) {
             console.log(data);
             $("#resultado").html(data);
@@ -34,6 +35,10 @@ function preencherEscolha(){
             $nascimentoAnimal = ($consAnimal['nascimentoAnimal']);
         }
     ?>
+    <div class="perfil">Nome:<?php echo $nomeAnimal;?><br>
+                        Raça:<br>
+                        Especie:<br>
+                        Temperamento:<br><img src="../<?php echo $imagemAnimal;?>"></div>
     </label>
     <select id= "Escolhas" onchange="preencherEscolha()">
         <option value="1">Consultas</option>

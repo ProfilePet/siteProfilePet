@@ -1,5 +1,5 @@
 <?php
-include('Model/LembreteConsulta.php');
+include_once('Model/LembreteConsulta.php');
 class LembreteConsultaDAO {
     public static function cadastrar(LembreteConsulta $consulta){
         require_once ('conn.php');
@@ -40,8 +40,8 @@ class LembreteConsultaDAO {
     }
 
     public static function consultaDetalhada($codC){
-        require_once ('conn.php');
-        $retornoDB = $pdo->prepare("SELECT * FROM `tblembreteconsulta` WHERE codConsulta=':cc'");
+        require ('conn.php');
+        $retornoDB = $pdo->prepare("SELECT * FROM `tblembreteconsulta` WHERE codConsulta=:cc");
         $retornoDB->bindValue(":cc",$codC);
         $retornoDB->execute();  
         return $retornoDB;
