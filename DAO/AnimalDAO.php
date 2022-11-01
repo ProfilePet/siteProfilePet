@@ -58,7 +58,7 @@ class AnimalDAO
     public static function consultarPerfil($cod)
     {
         require('conn.php');
-        $retornoDB = $pdo->prepare("SELECT codAnimal, nomeAnimal, imagemAnimal, nascimentoAnimal, nomeRacaAnimal, temperamento FROM tbanimal INNER JOIN tbRaca ON tbRaca.codRacaAnimal = tbAnimal.codRacaAnimal INNER JOIN tbTemperamento ON tbAnimal.codTemperamento = tbTemperamento.codTemperamento WHERE codAnimal = :ca");
+        $retornoDB = $pdo->prepare("SELECT codAnimal, nomeAnimal, imagemAnimal, nascimentoAnimal, nomeRacaAnimal, temperamento FROM tbanimal INNER JOIN tbRaca ON tbRaca.codRacaAnimal = tbAnimal.codRacaAnimal INNER JOIN tbTemperamento ON tbAnimal.codTemperamento = tbTemperamento.codTemperamento WHERE codAnimal = :ca AND ativoAnimal = 1");
         $retornoDB->bindValue(":ca", $cod);
         $retornoDB->execute();
         return $retornoDB;

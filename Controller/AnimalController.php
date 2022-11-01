@@ -1,4 +1,5 @@
 <?php
+
 class AnimalController
 {
     public function telaCadastrar()
@@ -88,7 +89,6 @@ class AnimalController
         $consultaAnimal = $consultaAnimal->fetchAll();
         $consultaEspecie = AnimalDAO::consultarEspecie();
         $consultaEspecie = $consultaEspecie->fetchAll();
-        //var_dump($consultaAnimal);
         include('View/modulos/Animal/editar.php');
     }
 
@@ -104,7 +104,7 @@ class AnimalController
         $objAnimal->setNascimentoAnimal($_POST['txtCalendario']);
         $objAnimal->setAtivoAnimal(1);
         $objAnimal->setTemperamentoAnimal(1);
-        
+
         if (isset($_POST['btnExcluir'])) {
             $retorno =  AnimalDAO::deletarAnimal($objAnimal);
             echo "
@@ -150,7 +150,7 @@ class AnimalController
             echo "Consultar";
             $cod = $_POST['btAnimal'];
             $this->telaPerfil($cod);
-        } else if (isset($_POST['btEditar'])) {
+        } elseif (isset($_POST['btEditar'])) {
             echo "Editar";
             $cod = $_POST['btEditar'];
             $this->telaEditar($cod);
