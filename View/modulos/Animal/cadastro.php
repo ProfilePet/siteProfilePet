@@ -58,10 +58,8 @@ function preencherRaca(){
 			<br>
 			<select name="txtTemperamento">
 			<?php
-						 session_start();
-						 $_SESSION['codUsuario']=$codUsu;
 				foreach($consultaTemperamento as $key => $consTemp){
-					$codTemp=($consTemp['codTemperamento']);
+					$codTemp=($consTemp['codTemperamentoAnimal']);
 					$temp=($consTemp['temperamento']);
 					echo "<option value=$codTemp>$temp</option>";
 				}

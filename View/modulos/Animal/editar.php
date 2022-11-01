@@ -14,7 +14,7 @@ function preencherRaca(){
 	var url_atual = window.location.href;
 	//alert(url_atual);
 	$.ajax({
-		url:'Controller/RacaController.php?especie='+especie,
+		url:'../Controller/RacaController.php?especie='+especie,
 		success:function(data) {
             $("#txtRaca").html(data);
 			$("#txtRaca").removeAttr('disabled');
@@ -22,7 +22,7 @@ function preencherRaca(){
 		});
 		}
 </script>
-<form action="editar-animal" method=post enctype=multipart/form-data>
+<form action="../editar-animal" method=post enctype=multipart/form-data>
     <?php
         foreach($consultaAnimal as $key => $consAnimal){
             $cod=($consAnimal['codAnimal']);
@@ -60,13 +60,10 @@ function preencherRaca(){
             <br><br>
             <br><br>
             <br><br>
-            <button id=botao-editar onClick=Mensagem()>Editar</button>
-            <button name=btnExcluir>Excluir</button>
+            <button name=btnEditar value=$cod>Editar</button>
+            <button name=btnExcluir value=$cod>Excluir</button>
  ";
 }
-    session_start();
-    $_SESSION['codAnimal'] = $cod;
-    $_SESSION['imagemAnimal'] = $imagemAnimal;
     ?>
 
  </form>

@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.perfil{
+    background-color: blue;
+    margin: 6%;
+    border-radius: 8px;
+    font-size: 60px;
+    text-align: initial;
+    color: white;
+}
+.perfil img{
+    position: absolute;
+    padding-left: 75%;
+    top: 15%;
+    width: 10%;
+}

@@ -1,5 +1,5 @@
 <?php
-include('Model/Medicacao.php');
+include_once('Model/Medicacao.php');
 class MedicacaoDAO{
     public static function consultarMedicacao(){
         include('conn.php');

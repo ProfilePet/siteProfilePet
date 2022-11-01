@@ -1,5 +1,5 @@
 <?php
-include('Model/LembreteMedicacao.php');
+include_once('Model/LembreteMedicacao.php');
 class LembreteMedicacaoDAO{
     public static function cadastrar(LembreteMedicacao $lm){
         include ('conn.php');
@@ -39,10 +39,10 @@ class LembreteMedicacaoDAO{
         return $retornoDB;
     }
     public static function consultar($ca){
-        require_once('conn.php');
-        $retornoDB = $pdo->prepare("SELECT `codLembreteMed`, `dataInicial`, `dataFinal`, `hora`, `repeticaoLembrete`, `codMedicacao`, tbanimal.nomeAnimal 
-                                    FROM `tblembretemedicacao` INNER JOIN tbanimal ON tblembretemedicacao.codAnimal = tbanimal.codAnimal 
-                                    WHERE codAnimal = ':ca'");
+        require_once('../conn.php');
+        $retornoDB = $pdo->prepare("SELECT codLembreteMed,dataInicial,dataFinal,hora,repeticaoLembrete, codMedicacao, tbanimal.nomeAnimal 
+                                    FROM tblembretemedicacao INNER JOIN tbanimal ON tblembretemedicacao.codAnimal = tbanimal.codAnimal 
+                                    WHERE tblembretemedicacao.codAnimal = :ca");
         $retornoDB->bindValue(":ca", $ca);
         $retornoDB->execute();
         return $retornoDB;

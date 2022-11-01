@@ -9,18 +9,17 @@
     <body>
     <?php
 		foreach($consultaAnimais as $key => $consAni){
-            $cod=($consAni['codAnimal']);
+            $cod=($consAni['codAnimal']);   
             $imagemAnimal=($consAni['imagemAnimal']);
             $nomeAnimal=($consAni['nomeAnimal']);
-            echo "<form action=tela-animal-perfil method=POST>
+            echo "
             <div class=animal>
-                <button class=btnEditar name=btEditar value=$cod>Editar
-                </button>
-                <button class=btnAnimal value=$cod type=submit name=btAnimal>
+                <a href=tela-editar-animal/$cod><button class=btnEditar name=btEditar value=$cod>Editar
+                </button></a>
+                <a href=tela-perfil-animal/$cod><button class=btnAnimal value=$cod type=submit name=btAnimal>
                     <img src=$imagemAnimal>
-                </button>$nomeAnimal
-            </div>
-            </form>";
+                </button></a>$nomeAnimal
+            </div>";
         }			
 	?>
     </body>

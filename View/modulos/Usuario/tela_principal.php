@@ -41,16 +41,14 @@
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
 </div>
-<form action="tela-consulta-animal" method="POST">
-  <button>OK</button>
-</form>
+
+
+<a href="tela-consulta-animal"><button>OK</button></a>
 <form action="tela-cadastro-animal" method="POST">
   <button>OK</button>
 </form>
 <?php
-  session_start();
-  $_SESSION['codUsuario'] = $us->getCodUsuario();
-		echo"{$us->getNomeUsuario()}"
+    echo"$codigo A";
 		?>
 </body>
 </html>

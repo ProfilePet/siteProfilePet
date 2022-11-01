@@ -26,6 +26,10 @@ if(isset($_GET['url']))
             $usu = new UsuarioController();
             $usu->Cadastrar();
         break;
+        case 'tela-principal-usuario':
+            $usu = new UsuarioController();
+            $usu->telaPrincipal();
+        break;
         case 'editar-usuario':
             $usu = new UsuarioController();
             $usu->editar();
@@ -36,6 +40,19 @@ if(isset($_GET['url']))
             $anm = new AnimalController();
             $anm->telaCadastrar();
         break;
+        case 'tela-consulta-animal':
+            $anm = new AnimalController();
+            $anm->telaConsultar();
+        break;
+        case 'tela-editar-animal':
+            $anm = new AnimalController();
+            $anm->telaEditar($url[1]);
+        break;
+        case 'tela-perfil-animal':
+            $anm = new AnimalController();
+            $anm->telaPerfil($url[1]);
+        break;
+
         case 'cadastrar-animal':
             $anm = new AnimalController();
             $anm->cadastrar();
@@ -44,19 +61,27 @@ if(isset($_GET['url']))
             $anm = new AnimalController();
             $anm->editar();
         break;
-        case 'tela-consulta-animal':
+        case 'animal-consultas':
             $anm = new AnimalController();
-            $anm->telaConsultar();
+            $anm->consultas_animal();
         break;
-        case 'tela-animal-perfil':
+        //tela-cadastro-consultas
+        case 'tela-cadastro-consultas':
             $anm = new AnimalController();
-            $anm->edita_Consulta();
+            $anm->telaCadastroConsulta($url[1]);
         break;
+        //tela-consultar-consulta
+        case 'tela-consultar-consulta':
+            $anm = new AnimalController();
+            $anm->consultarConsulta($url[1]);
+        break;
+        case 'tela-editar-consulta':
+            $anm = new AnimalController();
+            $anm->editarConsulta($url[1]);
+        break;
+
+
         //Geral
-        case 'tela-principal':
-            $grl = new UsuarioController();
-            $grl->telaSobre();
-        break;
 
         default:
             $usu = new UsuarioController();
@@ -75,3 +100,4 @@ else{
     $usu = new UsuarioController();
     $usu->telaSobre();
 }
+?>
