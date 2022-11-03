@@ -10,7 +10,7 @@ class UsuarioController
     {
         include 'View/modulos/Usuario/sobre.html';
     }
-    public function telaPrincipal(Usuario $us)
+    public function telaPrincipal()
     {
         include('DAO/UsuarioDAO.php');
         $verifica = UsuarioDAO::Verifica($us);
@@ -43,7 +43,7 @@ class UsuarioController
         $objUsuario->setCidade($_POST['cidades']);
         $objUsuario->setEstado($_POST['estados']);
         $retorno = UsuarioDAO::Cadastrar($objUsuario);
-        $this->telaPrincipal($objUsuario);
+        $this->telaPrincipal();
     }
     public function editar()
     {
@@ -101,7 +101,7 @@ class UsuarioController
                     ";
             } else {
                 //Mandando Codigo do Usuario Para outra tela
-                $this->telaPrincipal($objUsuario);
+                $this->telaPrincipal();
             }
         } else {
             echo "
