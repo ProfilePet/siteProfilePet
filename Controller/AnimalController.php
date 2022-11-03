@@ -155,7 +155,7 @@
             //var_dump($consultaAnimal);
             include('View/modulos/Animal/perfil.php');
         }
-        public function consultas_animal(){
+        public function consultasAnimal(){
             var_dump($_POST);
         }
         public function consultarConsulta($codCons){

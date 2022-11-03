@@ -6,7 +6,7 @@ echo "
 alert(\"OKOK estado = $id.\");
 </script>
 ";
-$consultaCID = $objUsuarioDao->ConsultarCidade($id);
+$consultaCID = $objUsuarioDao->consultarCidade($id);
 $consultaCID = $consultaCID->fetchAll();
 foreach($consultaCID as $key => $consCid){
     $cid=($consCid['nomeCidade']);

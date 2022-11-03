@@ -7,7 +7,7 @@ class Animal {
     private $nascimentoAnimal;
     private $codUsuarioA;
     private $codRacaAnimal;
-    private $codEspecie;
+
     private $temperamentoAnimal;
     private $ativoAnimal;
 

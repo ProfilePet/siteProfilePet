@@ -12,25 +12,32 @@ class UsuarioController
     }
     public function telaPrincipal()
     {
-        include('DAO/UsuarioDAO.php');
-        $verifica = UsuarioDAO::Verifica($us);
-        while ($linha = $verifica->fetch(PDO::FETCH_ASSOC)) {
-            $us->setcodUsuario($linha['codUsuario']);
+        session_start();
+        if (isset($_SESSION['dados'])) {
+            $nome = $_SESSION['nomeUsu'];
+            echo "Nome: $nome";
+            include('View/modulos/Usuario/tela_principal.php');
+        } else {
+            include 'View/modulos/Usuario/login.php';
         }
-        include('View/modulos/Usuario/tela_principal.php');
     }
     public function telaCadastrar()
     {
-        include('DAO/UsuarioDAO.php');
+        include_once('DAO/UsuarioDAO.php');
         $objUsuarioDao = new UsuarioDAO();
-        $consultaES = $objUsuarioDao->ConsultarEstado();
+        $consultaES = $objUsuarioDao->consultarEstado();
         $consultaES = $consultaES->fetchAll();
+        //var_dump($consultaES);
+
+        //Duas Consultas não ta funcionando
+        //$consultaCID = $objUsuarioDao->ConsultarCidade();
+
         include 'View/modulos/Usuario/cadastro.php';
     }
     public function cadastrar()
     {
-        include('Model/Usuario.php');
-        include('DAO/UsuarioDAO.php');
+        include_once('Model/Usuario.php');
+        include_once('DAO/UsuarioDAO.php');
         $objUsuario = new Usuario();
 
         //cadastro usuario
@@ -43,12 +50,12 @@ class UsuarioController
         $objUsuario->setCidade($_POST['cidades']);
         $objUsuario->setEstado($_POST['estados']);
         $retorno = UsuarioDAO::Cadastrar($objUsuario);
-        $this->telaPrincipal();
+        header('Location:tela-login-usuario');
     }
     public function editar()
     {
-        include('Model/Usuario.php');
-        include('DAO/UsuarioDAO.php');
+        include_once('Model/Usuario.php');
+        include_once('DAO/UsuarioDAO.php');
         $objUsuario = new Usuario();
         $objUsuario->setCodUsuario(21);
         $objUsuario->setNomeUsuario('testado');
@@ -70,8 +77,8 @@ class UsuarioController
     }
     public function logar()
     {
-        include('DAO/UsuarioDAO.php');
-        include('Model/Usuario.php');
+        include_once('DAO/UsuarioDAO.php');
+        include_once('Model/Usuario.php');
 
         $objUsuario = new Usuario();
         $objUsuarioDao = new UsuarioDAO();
@@ -93,6 +100,7 @@ class UsuarioController
                 $objUsuario->setSenha($linha['senha']);
             }
             if ($senha != $objUsuario->getSenha()) {
+
                 echo "
                     <script type=\"text/javascript\">
                     alert(\"Senha Invalida.\");
@@ -100,8 +108,12 @@ class UsuarioController
                     </script>
                     ";
             } else {
+                session_start();
+                $_SESSION['dados'] = $objUsuario;
+                $_SESSION['codigoUsu'] = $objUsuario->getCodUsuario();
+                $_SESSION['nomeUsu'] = $objUsuario->getNomeUsuario();
                 //Mandando Codigo do Usuario Para outra tela
-                $this->telaPrincipal();
+                header('Location:tela-principal-usuario');
             }
         } else {
             echo "

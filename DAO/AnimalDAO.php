@@ -1,6 +1,5 @@
 <?php
 include_once('Model/Animal.php');
-$tabela = 'tbanimal';
 class AnimalDAO
 {
     public static function cadastrar(Animal $an)

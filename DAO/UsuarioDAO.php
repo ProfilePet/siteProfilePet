@@ -3,14 +3,14 @@
 
 class UsuarioDAO
 {
-    public function ConsultarEstado()
+    public function consultarEstado()
     {
         include('conn.php');
         include('Model/Usuario.php');
         $retornoDB = $pdo->query("SELECT * FROM tbestado");
         return $retornoDB;
     }
-    public function ConsultarCidade($cid)
+    public function consultarCidade($cid)
     {
         //conn com .. porque está sendo acessada pela CidadeController
         include('../conn.php');

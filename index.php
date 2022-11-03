@@ -63,7 +63,7 @@ if(isset($_GET['url']))
         break;
         case 'animal-consultas':
             $anm = new AnimalController();
-            $anm->consultas_animal();
+            $anm->consultasAnimal();
         break;
         //tela-cadastro-consultas
         case 'tela-cadastro-consultas':
