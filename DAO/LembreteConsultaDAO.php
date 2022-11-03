@@ -4,7 +4,7 @@ class LembreteConsultaDAO {
     public static function cadastrar(LembreteConsulta $consulta){
         require_once ('conn.php');
         $retornoDB = $pdo->prepare("INSERT INTO tblembreteconsulta(dataConsulta, horaConsulta, localConsulta, nomeVeterinario, tipoConsulta, codDiagnostico, ativoLembreteConsulta, codAnimal) 
-                                    VALUES (':dt',':hr',':lo',':nv',':tp',':cd',':a',':ca')");
+                                    VALUES (:dt,:hr,:lo,:nv,:tp,:cd,:a,:ca)");
         $retornoDB->bindValue(":dt",$consulta->getDataConsulta());
         $retornoDB->bindValue(":hr",$consulta->getHoraConsulta());
         $retornoDB->bindValue(":lo",$consulta->getlocalConsulta());
@@ -18,7 +18,7 @@ class LembreteConsultaDAO {
     }
     public static function editar(LembreteConsulta $consulta){
         require_once ('conn.php');
-        $retornoDB = $pdo->prepare("UPDATE tblembreteconsulta SET dataConsulta=':dt',horaConsulta=':hr',localConsulta=':lo',nomeVeterinario=':nv',tipoConsulta=':tp',codDiagnostico=':cd',codAnimal=':ca' WHERE  codConsulta=':cc'");
+        $retornoDB = $pdo->prepare("UPDATE tblembreteconsulta SET dataConsulta=:dt,horaConsulta=:hr,localConsulta=:lo,nomeVeterinario=:nv,tipoConsulta=:tp,codDiagnostico=:cd,codAnimal=:ca WHERE  codConsulta=:cc");
         $retornoDB->bindValue(":dt",$consulta->getDataConsulta());
         $retornoDB->bindValue(":hr",$consulta->getHoraConsulta());
         $retornoDB->bindValue(":lo",$consulta->getlocalConsulta());
@@ -33,7 +33,7 @@ class LembreteConsultaDAO {
 
     public static function deletarLembrete($codC){
         require_once ('conn.php');
-        $retornoDB = $pdo->prepare("UPDATE tblembreteconsulta SET ativoLembreteConsulta = 0 WHERE codConsulta=':cc'");
+        $retornoDB = $pdo->prepare("UPDATE tblembreteconsulta SET ativoLembreteConsulta = 0 WHERE codConsulta=:cc");
         $retornoDB->bindValue(":cc",$codC);
         $retornoDB->execute();  
         return $retornoDB;
