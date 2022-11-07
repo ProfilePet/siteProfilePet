@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Nov-2022 às 20:55
+-- Tempo de geração: 07-Nov-2022 às 21:31
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.12
 
@@ -6192,8 +6192,7 @@ CREATE TABLE `tblembretemedicacao` (
   `codLembreteMed` int(11) NOT NULL,
   `dataInicial` date NOT NULL,
   `dataFinal` date NOT NULL,
-  `hora` time NOT NULL,
-  `repeticaoLembrete` varchar(7) CHARACTER SET utf8mb4 NOT NULL,
+  `hora` int(11) NOT NULL,
   `codMedicacao` int(11) NOT NULL,
   `codAnimal` int(11) NOT NULL,
   `ativoLembreteMedicacao` tinyint(1) NOT NULL
