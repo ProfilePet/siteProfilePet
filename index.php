@@ -1,7 +1,8 @@
 <?php
 include 'Controller/UsuarioController.php';
 include 'Controller/AnimalController.php';
-
+include 'Controller/ConsultaController.php';
+include 'Controller/DiagnosticoController.php';
 
 if(isset($_GET['url']))
 {
@@ -63,22 +64,59 @@ if(isset($_GET['url']))
         break;
         case 'animal-consultas':
             $anm = new AnimalController();
-            $anm->consultasAnimal();
+            $anm->consultas_animal();
         break;
-        //tela-cadastro-consultas
+
+        //Consultas
         case 'tela-cadastro-consultas':
-            $anm = new AnimalController();
-            $anm->telaCadastroConsulta($url[1]);
+            $cons = new ConsultaController();
+            $cons->telaCadastroConsulta($url[1]);
+        break;
+
+        case 'cadastrar-consulta':
+            $cons = new ConsultaController();
+            $cons->cadastrarConsulta($url[1]);
         break;
         //tela-consultar-consulta
         case 'tela-consultar-consulta':
-            $anm = new AnimalController();
-            $anm->consultarConsulta($url[1]);
+            $cons = new ConsultaController();
+            $cons->consultarConsulta($url[1]);
         break;
         case 'tela-editar-consulta':
-            $anm = new AnimalController();
-            $anm->editarConsulta($url[1]);
+            $cons = new ConsultaController();
+            $cons->telaEditarConsulta($url[1]);
         break;
+        case 'editar-consulta':
+            $cons = new ConsultaController();
+            $cons->editarConsulta($url[1],$url[2]);
+        break;
+        case 'excluir-consulta':
+            $cons = new ConsultaController();
+            $cons->excluirConsulta($url[1],$url[2]);
+        break;
+        
+        //Diagnosticos
+        case 'tela-cadastro-diagnosticos':
+            $diag = new DiagnosticoController();
+            $diag->telaCadastroDiagnostico($url[1]);
+        break;
+        case 'cadastrar-diagnostico':
+            $diag = new DiagnosticoController();
+            $diag->cadastrarDiagnostico($url[1]);
+        break;
+        case 'tela-editar-diagnostico':
+            $diag = new DiagnosticoController();
+            $diag->telaEditarDiagnostico($url[1]);
+        break;
+        case 'editar-diagnostico':
+            $diag = new DiagnosticoController();
+            $diag->editarDiagnostico($url[1],$url[2]);
+        break;
+        case 'tela-consultar-diagnostico':
+            $diag = new DiagnosticoController();
+            $diag->telaConsultarDiagnostico($url[1]);
+        break;
+
 
 
         //Geral

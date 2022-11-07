@@ -5,7 +5,7 @@
     $banco = "bdprofile";
 
     try{
-    $pdo = new PDO ("mysql:dbname=$banco;host=$host","$user","$pass");
+    $pdo = new PDO ("mysql:dbname=$banco;charset=utf8;host=$host","$user","$pass");
     }
     catch(PDOException $e){
         echo("Falha ao Conectar".$e->getMessage());

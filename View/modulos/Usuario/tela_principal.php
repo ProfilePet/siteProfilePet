@@ -47,8 +47,5 @@
 <form action="tela-cadastro-animal" method="POST">
   <button>OK</button>
 </form>
-<?php
-    echo"$codigo A";
-		?>
 </body>
 </html>

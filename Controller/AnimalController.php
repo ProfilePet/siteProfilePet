@@ -7,8 +7,6 @@
             $consultaTemperamento = $consultaTemperamento->fetchAll();
             $consultaEspecie = AnimalDAO::consultarEspecie();
             $consultaEspecie = $consultaEspecie->fetchAll();
-            session_start();
-            $codUsu=$_SESSION['codUsuario'];
             include('View/modulos/Animal/cadastro.php');
             
         }
@@ -44,8 +42,8 @@
             //var_dump($objAnimal);
             $retorno = AnimalDAO::cadastrar($objAnimal);
             echo "
-            <body></body>< src=//cdn.jsdelivr.net/npm/sweetalert2@11></>
-                    < type=\"text/java\">
+            <body></body><script src=//cdn.jsdelivr.net/npm/sweetalert2@11></script>
+                    <script type=\"text/javascript\">
                     Swal.fire({
                         title: 'Animal Cadastrado Com Sucesso.',
                         width: 600,
@@ -63,7 +61,7 @@
                             window.location='tela-consulta-animal'
                         }
                     })
-                    </>
+                    </script>
                     ";
         }
         public function telaConsultar(){
@@ -125,8 +123,8 @@
             $objAnimal->setCodAnimal($_POST['btnEditar']);
             $retorno = AnimalDAO::editarAnimal($objAnimal);
             echo "
-            <body></body>< src=//cdn.jsdelivr.net/npm/sweetalert2@11></>
-                    < type=\"text/java\">
+            <body></body><script src=//cdn.jsdelivr.net/npm/sweetalert2@11></script>
+                    <script type=\"text/javascript\">
                     Swal.fire({
                         title: 'Animal Alterado Com Sucesso.',
                         width: 600,
@@ -144,7 +142,7 @@
                             window.location='tela-consulta-animal'
                         }
                     })
-                    </>
+                    </script>
                     ";
                 }
         }
@@ -155,38 +153,8 @@
             //var_dump($consultaAnimal);
             include('View/modulos/Animal/perfil.php');
         }
-        public function consultasAnimal(){
+        public function consultas_animal(){
             var_dump($_POST);
-        }
-        public function consultarConsulta($codCons){
-            include('DAO/LembreteConsultaDAO.php');
-            $consultaConsulta= LembreteConsultaDAO::consultaDetalhada($codCons);
-            $consultaConsulta = $consultaConsulta->fetchAll();
-
-            foreach($consultaConsulta as $key => $consConsu){
-                $cod=($consConsu['codConsulta']);
-                $data=($consConsu['dataConsulta']);
-                $hora=($consConsu['horaConsulta']);
-                $local=($consConsu['localConsulta']);
-                $veterinario=($consConsu['nomeVeterinario']);
-                $tipoConsulta=($consConsu['tipoConsulta']);
-                //echo("<option value=$codCidade>$cid</option>".PHP_EOL);
-                echo"<hr>Data: $data<hr>Hora: $hora<hr>Local: $local<hr>Veterinario: $veterinario<hr>Tipo Consulta: $tipoConsulta<hr>".PHP_EOL;
-            }
-        }
-        public function editarConsulta($codCons){
-            include('DAO/LembreteConsultaDAO.php');
-            echo"a";
-            include('View/modulos/Consulta/editar.php');
-            $consultaConsulta= LembreteConsultaDAO::consultaDetalhada($codCons);
-            echo"a";
-            $consultaConsulta = $consultaConsulta->fetchAll();
-
-            var_dump($consultaConsulta);
-        }
-        public function telaCadastroConsulta($codAnimal){
-            var_dump($codAnimal);
-            include('View/modulos/Consulta/cadastro.php');
         }
     }
 ?>
