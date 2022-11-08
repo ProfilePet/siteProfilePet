@@ -6,8 +6,7 @@ class AnimalDAO {
         include ('conn.php');
 
         $retornoDB = $pdo->prepare("INSERT INTO tbanimal (nomeAnimal,imagemAnimal,nascimentoAnimal,ativoAnimal,codUsuario,codRacaAnimal,codTemperamento) 
-                                    VALUES (:n,:i,:na,:a,:c,:r,:t)");
-        echo"a";                
+                                    VALUES (:n,:i,:na,:a,:c,:r,:t)");              
         $retornoDB->bindValue(":n", $an->getNomeAnimal());
         $retornoDB->bindValue(":i", $an->getImagemAnimal());
         $retornoDB->bindValue(":na", $an->getNascimentoAnimal());
@@ -15,7 +14,6 @@ class AnimalDAO {
         $retornoDB->bindValue(":c", $an->getCodUsuarioA());
         $retornoDB->bindValue(":r", $an->getCodRacaAnimal());
         $retornoDB->bindValue(":t", $an->getTemperamentoAnimal());
-        echo"a";
         $retornoDB->execute();
         
         return $retornoDB;
