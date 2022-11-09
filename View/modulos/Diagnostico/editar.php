@@ -20,8 +20,20 @@
         <input type="text" name="txtTratamento" placeholder="Tratamento" value="<?php echo $tratamento?>">
         <select name="txtEnfermidade">
             <option selected value="<?php echo $codEnfermidade;?>"><?php echo $nomeEnfermidade?></option>
+            <?php
+            var_dump($consultaEnfermidade);
+            foreach($consultaEnfermidade as $key => $consEnf){
+            $codEnfermidade2=($consEnf['codEnfermidade']);
+            $nomeEnfermidade2=($consEnf['nomeEnfermidade']);
+            if($codEnfermidade2!=$codEnfermidade){
+            $selectEnf.="<option value=$codEnfermidade2>$nomeEnfermidade2</option>";
+            }
+            }
+            echo $selectEnf;
+    ?>
         </select>
         <button>Enviar</button>
     </form>
+    <a href="../excluir-diagnostico/<?php echo"$cod/$codAnimal";?>"><button>Excluir</button></a>
 </body>
 </html>

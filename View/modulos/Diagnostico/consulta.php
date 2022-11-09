@@ -7,6 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        foreach($consultaDiagnostico as $key => $consDiag){
+            $cod=($consDiag['codDiagnostico']);
+            $tratamento=($consDiag['tratamento']);
+            $codEnfermidade=($consDiag['codEnfermidade']);
+            $nomeEnfermidade=($consDiag['nomeEnfermidade']);
+            $codAnimal=($consDiag['codAnimal']);
+    }
+    ?>
+    <hr>Tratamento: <?php echo $tratamento?>
+    <hr>Nome da Enfermidade: <?php echo $nomeEnfermidade?>
     
 </body>
 </html>

@@ -11,7 +11,7 @@
 			<!-- IMAGEM-->	
 		<center>	
 			<br/><br/>
-			<img src="Imagens/TelaErro/Tela.png" class="Imagem">
+			<img src="../Imagens/TelaErro/Tela.png" class="Imagem">
 		
 			<br/><br/>
 

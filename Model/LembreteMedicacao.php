@@ -6,7 +6,7 @@ class LembreteMedicacao{
     private $hora;
     private $repeticaoLembrete;
     private $ativoMedicacao;
-    private $codMedicacaoEnfermidade;
+    private $codMedicacao;
     private $codAnimal;
 
     public function getCodLembreteMedicacao(){
@@ -63,12 +63,12 @@ class LembreteMedicacao{
         return $this;
     }
 
-    public function getCodMedicacaoEnfermidade(){
-        return $this->codMedicacaoEnfermidade;
+    public function getCodMedicacao(){
+        return $this->codMedicacao;
     }
 
-    public function setCodMedicacaoEnfermidade($codMedicacaoEnfermidade){
-        $this->codMedicacaoEnfermidade = $codMedicacaoEnfermidade;
+    public function setCodMedicacao($codMedicacao){
+        $this->codMedicacao = $codMedicacao;
         return $this;
     }
 

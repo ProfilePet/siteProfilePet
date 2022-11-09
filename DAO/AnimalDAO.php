@@ -6,7 +6,8 @@ class AnimalDAO {
         include ('conn.php');
 
         $retornoDB = $pdo->prepare("INSERT INTO tbanimal (nomeAnimal,imagemAnimal,nascimentoAnimal,ativoAnimal,codUsuario,codRacaAnimal,codTemperamento) 
-                                    VALUES (:n,:i,:na,:a,:c,:r,:t)");              
+                                    VALUES (:n,:i,:na,:a,:c,:r,:t)");
+        echo"a";                
         $retornoDB->bindValue(":n", $an->getNomeAnimal());
         $retornoDB->bindValue(":i", $an->getImagemAnimal());
         $retornoDB->bindValue(":na", $an->getNascimentoAnimal());
@@ -14,6 +15,7 @@ class AnimalDAO {
         $retornoDB->bindValue(":c", $an->getCodUsuarioA());
         $retornoDB->bindValue(":r", $an->getCodRacaAnimal());
         $retornoDB->bindValue(":t", $an->getTemperamentoAnimal());
+        echo"a";
         $retornoDB->execute();
         
         return $retornoDB;
@@ -52,7 +54,7 @@ class AnimalDAO {
 
     public static function consultarPerfil($cod){
         require ('conn.php');
-        $retornoDB = $pdo->prepare("SELECT codAnimal, nomeAnimal, imagemAnimal, nascimentoAnimal, nomeRacaAnimal, temperamento,especieAnimal FROM tbanimal INNER JOIN tbRaca ON tbRaca.codRacaAnimal = tbAnimal.codRacaAnimal INNER JOIN tbTemperamento ON tbAnimal.codTemperamento = tbTemperamento.codTemperamento INNER JOIN tbespecie ON tbespecie.codEspecieAnimal = tbraca.codEspecieAnimal WHERE codAnimal = :ca");
+        $retornoDB = $pdo->prepare("SELECT codAnimal, nomeAnimal, imagemAnimal, nascimentoAnimal, nomeRacaAnimal, temperamento,especieAnimal,tbespecie.codEspecieAnimal,tbanimal.codRacaAnimal,tbanimal.codTemperamento FROM tbanimal INNER JOIN tbRaca ON tbRaca.codRacaAnimal = tbAnimal.codRacaAnimal INNER JOIN tbTemperamento ON tbAnimal.codTemperamento = tbTemperamento.codTemperamento INNER JOIN tbespecie ON tbespecie.codEspecieAnimal = tbraca.codEspecieAnimal WHERE codAnimal = :ca");
         $retornoDB->bindValue(":ca", $cod);
         $retornoDB->execute();
 

@@ -44,6 +44,8 @@
             include('DAO/DiagnosticoDAO.php');
             $consultaDiagnostico = DiagnosticoDAO::consultarDiagnosticoTelaEditar($codDiagnostico);
             $consultaDiagnostico = $consultaDiagnostico->fetchAll();
+            $consultaEnfermidade = DiagnosticoDAO::consultarEnfermidade();
+            $consultaEnfermidade = $consultaEnfermidade->fetchAll();
             include('View/modulos/Diagnostico/editar.php');
 
         }
@@ -60,6 +62,32 @@
                     <script type=\"text/javascript\">
                     Swal.fire({
                         title: 'Diagnostico Alterado Com Sucesso.',
+                        width: 600,
+                        padding: '3em',
+                        color: '#716add',
+                        background: '#fff url(/images/trees.png)',
+                        backdrop: `
+                          rgba(0,0,123,0.4)
+                          url(/images/nyan-cat.gif)
+                          left top
+                          no-repeat
+                        `
+                      }).then((result) =>{
+                        if (result.isConfirmed){
+                            window.location='../../tela-perfil-animal/$codAnimal'
+                        }
+                    })
+                    </script>
+                    ";
+        }
+        public function excluirDiagnostico($codDiagnostico,$codAnimal){
+            include('DAO/DiagnosticoDAO.php');
+            $retorno= DiagnosticoDAO::excluirDiagnostico($codDiagnostico);
+            echo "
+            <body></body><script src=//cdn.jsdelivr.net/npm/sweetalert2@11></script>
+                    <script type=\"text/javascript\">
+                    Swal.fire({
+                        title: 'Diagnostico Excluido Com Sucesso.',
                         width: 600,
                         padding: '3em',
                         color: '#716add',

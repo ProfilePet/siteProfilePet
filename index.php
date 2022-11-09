@@ -3,6 +3,7 @@ include 'Controller/UsuarioController.php';
 include 'Controller/AnimalController.php';
 include 'Controller/ConsultaController.php';
 include 'Controller/DiagnosticoController.php';
+include 'Controller/MedicacaoController.php';
 
 if(isset($_GET['url']))
 {
@@ -77,7 +78,6 @@ if(isset($_GET['url']))
             $cons = new ConsultaController();
             $cons->cadastrarConsulta($url[1]);
         break;
-        //tela-consultar-consulta
         case 'tela-consultar-consulta':
             $cons = new ConsultaController();
             $cons->consultarConsulta($url[1]);
@@ -112,9 +112,38 @@ if(isset($_GET['url']))
             $diag = new DiagnosticoController();
             $diag->editarDiagnostico($url[1],$url[2]);
         break;
+        case 'excluir-diagnostico':
+            $diag = new DiagnosticoController();
+            $diag->excluirDiagnostico($url[1],$url[2]);
+        break;
         case 'tela-consultar-diagnostico':
             $diag = new DiagnosticoController();
             $diag->telaConsultarDiagnostico($url[1]);
+        break;
+        //Medicacoes
+        case 'tela-cadastro-medicacoes':
+            $med = new MedicacaoController();
+            $med->telaCadastrarMedicacao($url[1]);
+        break;
+        case 'cadastrar-medicacao':
+            $med = new MedicacaoController();
+            $med->cadastrarMedicacao($url[1]);
+        break;
+        case 'tela-editar-medicacao':
+            $med = new MedicacaoController();
+            $med->telaEditarMedicacao($url[1]);
+        break;
+        case 'editar-medicacao':
+            $med = new MedicacaoController();
+            $med->editarMedicacao($url[1],$url[2]);
+        break;
+        case 'excluir-medicacao':
+            $med = new MedicacaoController();
+            $med->excluirMedicacao($url[1],$url[2]);
+        break;
+        case 'tela-consultar-medicacao':
+            $med = new MedicacaoController();
+            $med->telaConsultarMedicacao($url[1]);
         break;
 
 

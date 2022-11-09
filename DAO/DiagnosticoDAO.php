@@ -31,7 +31,7 @@ class DiagnosticoDAO{
 
     public static function consultarDiagnostico($codA){
         include('../conn.php');
-        $retornoDB = $pdo->prepare("SELECT codDiagnostico, tratamento, nomeEnfermidade, ativoDiagnostico FROM tbdiagnostico INNER JOIN tbEnfermidade ON tbdiagnostico.codEnfermidade = tbEnfermidade.codEnfermidade WHERE codAnimal = :ca;");
+        $retornoDB = $pdo->prepare("SELECT codDiagnostico, tratamento, nomeEnfermidade, ativoDiagnostico FROM tbdiagnostico INNER JOIN tbEnfermidade ON tbdiagnostico.codEnfermidade = tbEnfermidade.codEnfermidade WHERE codAnimal = :ca AND ativoDiagnostico = 1");
         $retornoDB->bindValue(":ca", $codA);
         $retornoDB->execute();
         return $retornoDB;
@@ -58,10 +58,11 @@ class DiagnosticoDAO{
         return $retornoDB;
     }
 
-    public static function excluirDiagnostico(Diagnostico $dia){
+    public static function excluirDiagnostico($codDiagnostico){
         include('conn.php');
-        $retornoDB = $pdo->prepare("UPDATE tbdiagnostico SET ativoDiagnostico = false WHERE codAnimal = :ca");
-        $retornoDB->bindValue(":ca", $an->getCodAnimal());
+        $retornoDB = $pdo->prepare("UPDATE tbdiagnostico SET ativoDiagnostico = false WHERE codDiagnostico = :cd");
+        $retornoDB->bindValue(":cd",$codDiagnostico);
+        $retornoDB->execute();
         return $retornoDB;
     }
 }
