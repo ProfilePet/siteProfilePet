@@ -9,7 +9,6 @@
             foreach($consultaESP as $key => $consEsp){
                 $cod=($consEsp['codRacaAnimal']);
                 $especie=($consEsp['nomeRacaAnimal']);
-                //echo("<option value=$codCidade>$cid</option>".PHP_EOL);
                 if($cod!=$ra){
                 $option.="<option value=$cod>$especie</option>".PHP_EOL;
                 }
