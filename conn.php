@@ -1,7 +1,7 @@
 <?php
     $host = "localhost";
     $user = "root";
-    $pass = "usbw";
+    $pass = "";
     $banco = "bdprofile";
 
     try{

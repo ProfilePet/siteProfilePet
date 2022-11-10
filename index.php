@@ -25,8 +25,8 @@ if(isset($_GET['url']))
             $usu->telaCadastrar();
         break;
         case 'cadastrar-usuario':
-            $usu = new UsuarioController();
-            $usu->Cadastrar();
+                $usu = new UsuarioController();
+                $usu->Cadastrar();
         break;
         case 'tela-principal-usuario':
             $usu = new UsuarioController();
