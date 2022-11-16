@@ -36,14 +36,9 @@
 		<!--Email-->
 		<input type="Email" name="txtEmail" placeholder="Email" required class="Text">
 		<br/>
-		<!--Cidade-->
-		<select  id="cidades" name="cidades" required class="Selects" disabled>
-			<option selected>Cidade</option>
-		</select>
-			
 		<!--Select Estado-->
 		<select id="estados" name="estados" required onchange="preencherCidades()" required class="Selects">
-		<option selected>Estado</option>
+		<option value="0" selected>Estado</option>
 		<?php
 			session_start();
 			$_SESSION['codUsuario']=$codUsu;
@@ -54,10 +49,14 @@
 			}
 		?>
 		</select>
+		<!--Cidade-->
+		<select  id="cidades" name="cidades" required class="Selects" disabled>
+			<option value="0" selected>Cidade</option>
+		</select>
 		<br/>
-		<input type="password" name="txtSenha" placeholder="Digite sua Senha" required class="Text Senha">
+		<input type="password" name="txtSenha" placeholder="Digite sua Senha" required class="Text" id=senha1>
 		<br/>
-		<input type="password" oninput="validarSenha(this)" name="txtSenha2" placeholder="Confirme sua Senha" required class="Text">
+		<input type="password" oninput="validarSenha(), validarCidade()" name="txtSenha2" placeholder="Confirme sua Senha" required class="Text" id=senha2>
 		<br/>
 		<!--CheckBox-->
 		<input type="Checkbox" required name="ckbTermis">Eu Concordo com os <a href=""><b>Termos de Uso</b></a> <br/><br/>	
@@ -67,12 +66,26 @@
 		<input type="reset" name="btnLimpar" placeholder="Limpar" class="botoes">	
 	</form>
 	<script>
-		function validarSenha(input){
-			alert("a");
-			if(input.valueOf !== document.getElementsByClassName("Senha").value){
-				input.setCustomValidity('Senha não são iguais, favor repita!');
+		function validarSenha(){
+			const inputSenha2 = document.getElementById('senha2')
+			const inputSenha1 = document.getElementById('senha1').value
+			const inputSenha2Value = document.getElementById('senha2').value
+			if(inputSenha1 !== inputSenha2Value){
+				inputSenha2.setCustomValidity('Senha não são iguais, favor repita!');
 			}else{
-				input.setCustomValidity('');
+				inputSenha2.setCustomValidity('');
+			}
+		}
+
+		function validarCidade(){
+			const inputEstado = document.getElementById('estados');
+			const inputEstadoValue = document.getElementById('estados').value;
+
+			if (inputEstadoValue === "0" || inputEstadoValue ==="") {
+				console.log(inputEstadoValue)
+				inputEstado.setCustomValidity('Preencha este Campo!');
+			} else {
+				inputEstado.setCustomValidity('');
 			}
 		}
 	</script>
