@@ -3,6 +3,9 @@ background-color: #00AFB9;
 margin: 0;
 top: 0;
 }
+.fundo{
+    background-color: white;
+}
 .logo{
     display: flex;
     flex-direction: column;

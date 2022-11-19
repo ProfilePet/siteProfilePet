@@ -1,24 +1,20 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.fundo{
-    background-color: #00AFB9;
-}
-.perfil{
-    background-color: white;
-    margin: 3%;
-    border-radius: 8px;
-    font-size: 2rem;
-    text-align: initial;
-    color: rgb(41, 32, 158);
-}
-.perfil img{
-    float: right;
 
-    margin-top: 1%;
-    width: 20%;
-    height: 10%;
+button.btnImprimir {
+    margin-left: 3%;
+}
+button.btnAdicionar {
+    height: 4vh;
+    border-radius: 45%;
+    border: none;
+    margin: 3%;
+    width: 4%;
+}
+td button {
+    border: none;
+    background: none;
+}
+tr:hover{
+    background-color: #00AFB9;
 }
 #resultado{
     background-color: white;
@@ -40,43 +36,28 @@
 .form-select{
     margin-right: 3%;
 }
+table.table.table-bordered.border-primary.medicacao {
+    max-inline-size: -webkit-fill-available;
+    align-content: flex-start;
+    display: table;
+    margin: 3%;
+}
+table.table.table-bordered.border-primary.diagnostico {
+    max-inline-size: -webkit-fill-available;
+    align-content: flex-start;
+    display: table;
+    margin: 3%;
+}
+table.table.table-bordered.border-primary.consulta {
+    max-inline-size: -webkit-fill-available;
+    align-content: flex-start;
+    display: table;
+    margin: 3%;
+}
 tbody, td, tfoot, th, thead, tr {
+    margin: 3%;
     padding: 3%;
     text-align: center;
     background-color: white;
     color: #050A30;
-}
-@media only screen and (min-width:994px){
-    .perfil img{
-        width: 13%;
-        height: 1%;
-    }
-}
-@media only screen and (max-width:700px){
-    .perfil{
-        font-size: 2rem;
-    }
-    .perfil img{
-        width: 18%;
-        height: 1%;
-    }
-    tbody, td, tfoot, th, thead, tr {
-        padding: 1%;
-    }
-}
-@media only screen and (max-width:400px){
-    .perfil{
-        font-size: 3rem;
-        text-align: center;
-    }
-    .perfil img{
-        width: 15%;
-        height: 2%;
-        float: none;
-        display: table-column;
-        float: right;
-    }
-    tbody, td, tfoot, th, thead, tr {
-        font-size: 3rem;
-    }
 }

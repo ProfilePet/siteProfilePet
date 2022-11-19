@@ -1,11 +1,16 @@
 /*Body*/
-body{
-  background-color: #00AFB9; 
+body.fundo{
+  background-color: #00AFB9;
+  font-family: 'Josefin', sans-serif;
 }
 
 /*Label*/
 label{
   margin-left: 30px;
+}
+select#txtEspecie{
+  width: 50%;
+  margin-left: 8%;
 }
 
 /*H1 - Cadastrar Animal*/
@@ -13,7 +18,7 @@ H1{
  margin-top: 20px;
  margin-left: 30px;
  font-size: 20px;
- font-family: "Josefin Sans";
+ font-family: 'Josefin', sans-serif;
  color: #1A202C;
 }
 
@@ -25,13 +30,32 @@ H1{
   position: relative;
   
 }
+input#formFile {
+  width: 50%;
+  margin-left: 8%;
+}
 
 /*Input do nome*/
 #nome{
-  width: 300px;
+  width: 50%;
   height: 30px;
-  margin-left: 40px;
+  margin-left: 8%;
 
+}
+select.temperamento{
+  margin-left: 8%;
+  width: 50%;
+}
+.raca{
+  margin-left: 16%;
+}
+select#txtRaca {
+  margin-left: 8%;
+  width: 50%;
+}
+button.btn.btn-primary.botoes {
+  background-color: #00AFB9;
+  border: #00AFB9;
 }
 
 /*Posição das letras do menu*/
@@ -53,15 +77,22 @@ H1{
   margin-top: -65px;
   background-color: white;
   position: absolute; 
-  width: 50%;
-  height: 500px;
-  top: 60%;
+  width: 34%;
+  height: 74%;
+  top: 70%;
   left: 50%;
+  align-items: center;
   transform: translate(-50%, -50%);
   border-radius: 20px;
-
+  display: inline-table;
 }
-
+#cadastro label {
+  margin-left: 8%;
+  display: block;
+}
+.d-grid.gap-2.col-6.mx-auto.botoesDiv {
+  margin: 3%;
+}
 /*Onde insere a imagem do animal*/
 #fotoAnimal{
   background-color: silver;
@@ -82,7 +113,7 @@ H1{
 
 /*Input data, arrumando a posição*/
 #calendario{
-  margin-left: 65px;
+  margin-left: 8%;
 }
 
 /*Label data nascimento, arrumando a posição*/
@@ -95,11 +126,11 @@ H1{
     background-color: #00AFB9;
     border: none;
     padding: 15px;
-    width: 600px;
+    width: 50%;
     border-radius: 6px;
     color: white;
     cursor: pointer;
-    margin: 0 auto;
+    margin-left: 14%;
     position: relative;
     right: -10%;
             
@@ -119,7 +150,7 @@ H1{
   height: 70px;
   width: 100%;
   background-color: #050A30;
-  margin-top: 800px;
+  margin-top: 59%;
 
 }
 
@@ -144,11 +175,9 @@ H1{
 }
 
 /*Icone do instagram*/
-#foto-rodape{
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    left: 80%;
-    margin-top: 10px;
+.fa-brands, .fab {
+  float: right;
+  font-weight: 400;
+  margin-top: 1.5%;
+  margin-right: 9%;
 }
-

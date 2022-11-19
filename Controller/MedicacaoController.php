@@ -24,7 +24,7 @@
                         title: 'Medicação Cadastrada Com Sucesso.',
                         width: 600,
                         padding: '3em',
-                        color: '#050A30',
+                        color: '#716add',
                         background: '#fff url(/images/trees.png)',
                         backdrop: `
                           rgba(0,0,123,0.4)
@@ -68,7 +68,7 @@
                         title: 'Medicação Alterada Com Sucesso.',
                         width: 600,
                         padding: '3em',
-                        color: '#050A30',
+                        color: '#716add',
                         background: '#fff url(/images/trees.png)',
                         backdrop: `
                           rgba(0,0,123,0.4)
@@ -95,7 +95,7 @@
                         title: 'Medicação Excluida Com Sucesso.',
                         width: 600,
                         padding: '3em',
-                        color: '#050A30',
+                        color: '#716add',
                         background: '#fff url(/images/trees.png)',
                         backdrop: `
                           rgba(0,0,123,0.4)

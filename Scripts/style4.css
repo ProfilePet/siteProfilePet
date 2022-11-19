@@ -7,33 +7,100 @@
     margin: 3%;
 }
 button.btnEditar{
-    background-color: rgb(40, 161, 121);
-    margin-left: 95%;
+    background-color: white;
+    margin-left: 81.1%;
+    width: 19%;
+    height: 39px;
     margin-top: 0%;
+    border: none;
+}
+.Titulo{
+    background-color: #050A30;
+    color: white;
+    width: 35%;
+    text-align: center;
+    margin-left: auto;
+    font-size: 2rem;
+    margin-right: auto;
+    margin-top: 3%;
+}
+body{
+    background-color:  #21BDB8;
+    font-family: 'Josefin Sans';
 }
 button.btnEditar:hover{
-    background-color: rgb(36, 138, 104);
-    margin-left: 95%;
-    margin-top: 0%;
-    transform: scaleX(1.2);
+    background-color:  #00AFB9;
+    transform: scaleX(1.0);
 }
-.btnAnimal{
-    width: 95%;
-    display: flex;
-    height: 70%;
-    background-color: brown;
+button.btnAnimal  {
+    width: 64%;
+    height: 4vw;
+    background-color: #050A30;
+    color: white;
+    margin: 10%;
+}
+
+.animal img:hover{
+    transform: scale(1.2);
+}
+.animal{
+    flex: 1 1 200px;
+    margin: 5%;
+    float: left;
+    height: 65%;
+    width: 52%;
+    /* border: 51px; */
+    /* border-color: mediumblue; */
+    background-color: white;
+    display: inline;
+    align-items: center;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+}
+label {
+    font-size: 2rem;
+    display: block;
+    font-weight: bolder;
 }
 .animal img{
-    width: 10%;
-    display: flex;
-    height: 70%;
-    background-color: brown;
+    width: 58%;
+    height: 200px;
+    object-fit: contain;
+    margin: 10%;
+    border-color: black;
+    border-style: solid;
 }
-.animal img:hover{
-    width: 10%;
+.rodape {
+    bottom: 0%;
+    height: 70px;
+    width: 100%;
+    background-color: #050A30;
+    color: white;
+    text-align: center;
+    /* margin-top: 59%; */
+}
+#Menu{
+    width: 100%;
+    height: 100px;
+    background-color:#050A30;
+}
+#Menu a{
+    color: #fff;
+    position: relative;
+    top: 40px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 1%;
+}
+.PataImg img {
+    width: 9%;
+    position: right;
+    margin-left: 89%;
+}
+.main {
     display: flex;
-    height: 70%;
-    background-color: brown;
-    transform: scale(1.2);
+    /* float: left; */
+     flex-wrap: wrap;
 }
 

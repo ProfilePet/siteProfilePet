@@ -1,51 +1,105 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="Scripts/estiloCss.css">
-    <title>Tela Sobre</title>
-</head>
-<body>
-<div class="topo"> <!--topnav-->
-  <a class="active" href="#home">Home</a>
-  <a href="#">Sobre</a>
-  <a href="#">Equipe</a>
-  <a href="#">Contato</a>
-  <button id="botao-login2">Login</button>
-  <br><br>
- <center><div id="folheto">
-   <img src="Imagens/TelaSobre/catioro.png" id="folhefotos">
-   <img src="Imagens/TelaSobre/ratinho.png" id="folhefotos2">
-      <img src="Imagens/TelaSobre/dog.jpg" id="folhefotos3">
- </div></center>
-</div>	
-     <div id="meio00"></div>
-<div id="esquerda">
-  <img src="Imagens/logo1.png" id="logo">
-  <p id="boasVindas"><b>Bem Vindos ao <br> Profile Pet<b></p>
-  <font id="frase">Cuidar do seu pet nunca foi tão fácil!</font>
-  <br><br>
-        <a href="tela-cadastro-usuario">
-        <button id="botao-cadastrar">Cadastrar</button>
-        </a>
-        <a href="tela-login-usuario">
-        <button id="botao-login">Login</button>
-        </a>
-</div>  
-  <br><br><br>
-  <div id="meio">
-     <img src="Imagens/TelaSobre/figuras.png" width="580" height="580">
-     <div id="sobree1">
-     <h1 id="SO">Sobre</h1>  
-     <p id="sobree">O Profile Pet tem intuito de auxiliar tutores, que tem dificuldade em <br> controlar algumas situações que envolve a saúde, como o histórico de consultas e cirurgias que o Pet já teve ou terá,<br> controle de medicamentos que trata atualmente ou já tratou no passado, além de algumas informações sobre o Pet</p>
-     </div>
-  </div>
-         
-  <div id="penultima">
-      <img src="Imagens/TelaSobre/fofo.jpg" id="imagem3"></div>
-   <div id="antepenultima"></div>
+<html lang=“pt-br”>
 
-        <div id="rodape"></div>  
+<head>
+  <meta charset=“utf-8” />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="CSS/Sobre.css">
+  <link rel="icon" type="imagem/png" href="Imagens/TelaSobre/logoAba.png" />
+</head>
+<title>Profile Pet</title>
+
+<body>
+  <a name="Ho"></a>
+  <div class="topo">
+    <!--topnav-->
+    <a class="active" href="#Ho">Home</a>
+    <a href="#Se">Serviços</a>
+    <a href="#So">Sobre</a>
+    <a href="https://instagram.com/profile_pett?igshid=YmMyMTA2M2Y=">Instagram</a>
+    <a href="tela-login-usuario"><button id="botao-login2">Login</button></a>
+    <br><br>
+    <div id="div-princiImagem">
+      <img src="Imagens/TelaSobre/PugAmarelo.png" id="imagem01">
+      <img src="Imagens/TelaSobre/hamster.png" id="imagem02">
+      <img src="Imagens/TelaSobre/MulherCao.png" id="imagem03">
+    </div>
+  </div>
+  <a name="Se"></a>
+  <div id="meio00"></div>
+  <div id="esquerda">
+    <img src="Imagens/TelaSobre/logo.png" id="logo">
+    <p id="boasVindas"><b>Bem Vindos ao <br> Profile Pet<b></p>
+    <font id="frase">Cuidar do seu pet nunca foi tão fácil!</font>
+    <br><br>
+    <a href="tela-cadastro-usuario">
+      <button id="botao-cadastrar">Cadastrar</button>
+    </a>
+    <a href="tela-login-usuario">
+      <button id="botao-login">Login</button>
+    </a>
+  </div>
+
+  <h1 id="titulo-servico">Serviços</h1>
+
+  <div id="div-principal">
+    <div class="legenda">
+      <img src="Imagens/TelaSobre/vacina.png" class="imagens">
+      <p class="informacao">A vacinação do seu pet fica em dia!</p>
+    </div>
+    <div class="legenda">
+      <img src="Imagens/TelaSobre/consulta.png" class="imagens">
+      <p class="informacao">Caléndario de consultas.</p>
+    </div>
+    <div class="legenda">
+      <img src="Imagens/TelaSobre/medicacao.png" class="imagens">
+      <p class="informacao">Horário de medicações.</p>
+    </div>
+    <div class="legenda">
+      <img src="Imagens/TelaSobre/diagnos.png" class="imagens">
+      <p class="informacao">Diagnostico do seu pet.</p>
+    </div>
+  </div>
+  <a name="So"></a>
+  <img src="Imagens/TelaSobre/banner-sb.png" id="banner01">
+
+
+  <div id="div-ultima">
+    <img src="Imagens/TelaSobre/cachocara.png" id="foto-caramelo">
+    <h1 id="titulo-sobre">Sobre Nós</h1>
+    <p id="frase-sobre">O Profile Pet tem intuito de auxiliar tutores, que tem dificuldade<br>
+      em controlar algumas situações que envolve a saúde,<br>
+      como o histórico de consultas e diagnósticos que o Pet já teve ou terá,<br>
+      controle de medicamentos e vacinas que trata atualmente ou já tratou no passado,<br>
+      além de algumas informações sobre o Pet.</p>
+  </div>
+  <img src="Imagens/TelaSobre/patas.png" id="imagem-patas">
+
+  <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 490" version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+        <stop stop-color="rgba(5, 10, 48, 1)" offset="0%"></stop>
+        <stop stop-color="rgba(5, 10, 48, 1)" offset="100%"></stop>
+      </linearGradient>
+    </defs>
+    <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)"
+      d="M0,0L60,73.5C120,147,240,294,360,351.2C480,408,600,376,720,343C840,310,960,278,1080,245C1200,212,1320,180,1440,187.8C1560,196,1680,245,1800,236.8C1920,229,2040,163,2160,114.3C2280,65,2400,33,2520,40.8C2640,49,2760,98,2880,155.2C3000,212,3120,278,3240,269.5C3360,261,3480,180,3600,163.3C3720,147,3840,196,3960,220.5C4080,245,4200,245,4320,269.5C4440,294,4560,343,4680,310.3C4800,278,4920,163,5040,163.3C5160,163,5280,278,5400,294C5520,310,5640,229,5760,196C5880,163,6000,180,6120,196C6240,212,6360,229,6480,261.3C6600,294,6720,343,6840,359.3C6960,376,7080,359,7200,318.5C7320,278,7440,212,7560,179.7C7680,147,7800,147,7920,196C8040,245,8160,343,8280,334.8C8400,327,8520,212,8580,155.2L8640,98L8640,490L8580,490C8520,490,8400,490,8280,490C8160,490,8040,490,7920,490C7800,490,7680,490,7560,490C7440,490,7320,490,7200,490C7080,490,6960,490,6840,490C6720,490,6600,490,6480,490C6360,490,6240,490,6120,490C6000,490,5880,490,5760,490C5640,490,5520,490,5400,490C5280,490,5160,490,5040,490C4920,490,4800,490,4680,490C4560,490,4440,490,4320,490C4200,490,4080,490,3960,490C3840,490,3720,490,3600,490C3480,490,3360,490,3240,490C3120,490,3000,490,2880,490C2760,490,2640,490,2520,490C2400,490,2280,490,2160,490C2040,490,1920,490,1800,490C1680,490,1560,490,1440,490C1320,490,1200,490,1080,490C960,490,840,490,720,490C600,490,480,490,360,490C240,490,120,490,60,490L0,490Z">
+    </path>
+    <defs>
+      <linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0">
+        <stop stop-color="rgba(0, 175, 185, 1)" offset="0%"></stop>
+        <stop stop-color="rgba(0, 175, 185, 1)" offset="100%"></stop>
+      </linearGradient>
+    </defs>
+    <path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)"
+      d="M0,294L60,294C120,294,240,294,360,245C480,196,600,98,720,122.5C840,147,960,294,1080,318.5C1200,343,1320,245,1440,236.8C1560,229,1680,310,1800,334.8C1920,359,2040,327,2160,310.3C2280,294,2400,294,2520,310.3C2640,327,2760,359,2880,375.7C3000,392,3120,392,3240,351.2C3360,310,3480,229,3600,236.8C3720,245,3840,343,3960,375.7C4080,408,4200,376,4320,367.5C4440,359,4560,376,4680,383.8C4800,392,4920,392,5040,343C5160,294,5280,196,5400,138.8C5520,82,5640,65,5760,57.2C5880,49,6000,49,6120,98C6240,147,6360,245,6480,245C6600,245,6720,147,6840,89.8C6960,33,7080,16,7200,81.7C7320,147,7440,294,7560,351.2C7680,408,7800,376,7920,367.5C8040,359,8160,376,8280,375.7C8400,376,8520,359,8580,351.2L8640,343L8640,490L8580,490C8520,490,8400,490,8280,490C8160,490,8040,490,7920,490C7800,490,7680,490,7560,490C7440,490,7320,490,7200,490C7080,490,6960,490,6840,490C6720,490,6600,490,6480,490C6360,490,6240,490,6120,490C6000,490,5880,490,5760,490C5640,490,5520,490,5400,490C5280,490,5160,490,5040,490C4920,490,4800,490,4680,490C4560,490,4440,490,4320,490C4200,490,4080,490,3960,490C3840,490,3720,490,3600,490C3480,490,3360,490,3240,490C3120,490,3000,490,2880,490C2760,490,2640,490,2520,490C2400,490,2280,490,2160,490C2040,490,1920,490,1800,490C1680,490,1560,490,1440,490C1320,490,1200,490,1080,490C960,490,840,490,720,490C600,490,480,490,360,490C240,490,120,490,60,490L0,490Z">
+    </path>
+  </svg>
+
+
+  <div id="rodape">
+    <p id="profile">2022 - Profile Pet</p>
+  </div>
 </body>
-</html>
+<html>

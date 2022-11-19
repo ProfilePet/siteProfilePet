@@ -43,9 +43,9 @@
 </div>
 
 
-<a href="tela-consulta-animal"><button>OK</button></a>
+<a href="tela-consulta-animal"><button>Consultar Animais</button></a>
 <form action="tela-cadastro-animal" method="POST">
-  <button>OK</button>
+  <button>Cadastrar Animal</button>
 </form>
 </body>
 </html>
