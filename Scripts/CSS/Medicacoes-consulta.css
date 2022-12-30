@@ -1,0 +1,185 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+/*Div Menu*/
+#Menu{
+    width: 100%;
+    height: 100px;
+    background-color:#050A30;
+}
+
+/*Titulo - Nova Medicacação*/
+h2{
+  color: #050A30;
+  font-family: 'Josefin',sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 4%;
+}
+
+/*Arrumando a posição e decorando*/
+a{
+    color: #fff;
+    position: relative;
+    top: 40px;
+    left: 50px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/*Formatando o rodapé*/
+#rodape{
+    bottom: 0%;
+    width: 100%;
+    top: 100%;
+    height: 100px;
+    background-color: #050A30;
+}
+
+/*Formatando o Profile Pet*/
+p{
+    color: #fff;
+    font: 15px;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+/*Label Data inicial da medicação*/
+
+/*Calendário - Data inicial*/
+
+/*Label Horário do remedio*/
+
+
+/*Select Medicação
+#SeleMedi{
+    border-radius: 10px;
+    width: 190px;
+    height: 40px;
+    border-color: #050A30;
+    position: relative;
+    top: 180px;
+    left: -265px;
+}*/
+
+/*Label Data final
+#Df{
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font: 15px;
+    top: 170px;
+    position: relative;
+    left: 80px;
+}*/
+
+/*Calendário Data final*/
+
+
+/*Formatando o botão cadastrar*/
+#btn-Cada{
+    background-color: #00AFB9;
+    color: #fff;
+    font-family: 'Josefin', sans-serif;
+    width: 40%;
+    height: 57.39px;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 10px;
+}
+
+/*Colocando efeito no botão*/
+#btn-Cada:hover{
+    background-color: #ADD8E6;
+    color: #050A30;
+}
+input#btn-Exc{
+    background-color: #00AFB9;
+    color: #fff;
+    font-family: 'Josefin', sans-serif;
+    width: 40%;
+    height: 57.39px;
+    margin-left: -20%;
+    border: none;
+    border-radius: 10px;
+}
+
+/*Colocando efeito no botão*/
+#btn-Exc:hover{
+    background-color: #ADD8E6;
+    color: #050A30;
+}
+.Info {
+    width: 50%;
+    height: 40vh;
+    font: 15px;
+    font-family: 'Josefin', sans-serif;
+    font-weight: bolder;
+    margin-left: 25%; 
+    display: inline-flex;
+    margin-top: 3%;
+    border-radius: 10px;
+    border: inset;
+    border-color: #050A30;
+}
+input#HoraInicial {
+    font-family: 'Josefin', sans-serif;
+    font-weight: bolder;
+    width: 30%;
+    border-radius: 11px;
+    margin-left: 3%;
+}
+.HoraMed {
+    border-radius: 10px;
+    border: inset;
+    border-color: #050A30;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: 1.1rem;
+    font-family: 'Josefin', sans-serif;
+    text-align: center;
+}
+.divDir {
+    width: 50%;
+    display: grid;
+}
+.divEsq {
+    margin-left: 25%;
+    width: 25%;
+    display: grid;
+}
+
+img {
+    display: flex;
+    /* top: 700px; */
+    bottom: 0px;
+    left: 20px;
+}
+
+.form1 {
+    text-align: center;
+    display: inline-grid;
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font: 15px;
+    top: 170px;
+}
+.form2 {
+    text-align: center;
+    display: inline-grid;
+}
+#Input{
+    margin: 2%;
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font: 15px;
+    top: 170px;
+    border-radius: 10px;
+    width: 190px;
+    height: 40px;
+    border-color: #050A30;
+}

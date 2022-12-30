@@ -7,6 +7,11 @@
         public function telaSobre(){
             include 'View/modulos/Usuario/sobre.html';
         }
+        public function Sair(){
+            session_start();
+            unset($_SESSION['dados']);
+            $this->telaSobre();
+        }
         public function telaPrincipal(){
             session_start();
             if (isset($_SESSION['dados'])){

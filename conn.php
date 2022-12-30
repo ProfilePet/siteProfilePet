@@ -2,7 +2,7 @@
     $host = "localhost";
     $user = "root";
     $pass = "usbw";
-    $banco = "bdprofile";
+    $banco = "bdprofilepet";
 
     try{
     $pdo = new PDO ("mysql:dbname=$banco;charset=utf8;host=$host","$user","$pass");

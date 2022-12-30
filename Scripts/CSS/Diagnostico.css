@@ -1,0 +1,165 @@
+*{margin: 0; padding: 0;}
+
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  width: 50%;
+  height: 600px;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 90px;
+  border-radius: 10px;
+  border-color: #050A30;
+  border-style: solid;
+}
+
+#NomeDiagn{
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font-size: 15px;
+    position:  absolute;
+    top: 365px;
+}
+label#Diagnos2{
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font-size: 15px;
+    top: 365px;
+}
+
+#btn-cadastra{
+    background-color: #00AFB9;
+    color: #fff;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 90%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+#btn-cadastra:hover{
+    background-color: #ADD8E6;
+    color:#050A30;
+}
+#btn-alterar{
+    background-color: #00AFB9;
+    color: #fff;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    margin-left: 8.5%;
+    width: 40%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+#btn-alterar:hover{
+    background-color: #ADD8E6;
+    color:#050A30;
+}
+input.btn-excluir{
+    background-color: #00AFB9;
+    color: #fff;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 40%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+input.btn-excluir:hover{
+    background-color: #ADD8E6;
+    color:#050A30;
+}
+#rodape{
+    width: 100%;
+    height: 100px;
+    background-color: #050A30;
+    margin-top: 140px;
+    color:#fff;
+    text-align: center;
+    font-family: 'Josefin', sans-serif;
+}
+
+input[type=text]{
+    width: 90%;
+    height: 90px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border-style: solid;
+    background: #fff;
+    border-radius: 8px;
+    border-color: #050A30;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+select {
+    /* display: inline-grid; */
+    /* border-radius: 10px; */
+    /* border-color: #050A30; */
+    width: 90%;
+    height: 90px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border-style: solid;
+    background: #fff;
+    border-radius: 8px;
+    border-color: #050A30;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+
+#Menu a{
+    float: left;
+    color: #fff ;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+    left: 60px;
+    top: 40px;
+}
+
+#Menu{
+    width: 100%;
+    height: 100px;
+    background-color:#050A30;
+}
+
+#Diagnos{
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font-size: 15px;
+    position:  absolute;
+    top: 550px;
+}
+label#NomeDiagn2{
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font-size: 15px;
+    position:  absolute;
+}
+
+
+h2{
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font-size: 20px;
+    margin-top: 10px;
+
+}
+
+h1{
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-left: 30px;
+}

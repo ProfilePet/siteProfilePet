@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="imagem/png" href="../Imagens/TelaSobre/logoAba.png" />
+    <link rel="stylesheet" type="text/css" href="../Scripts/CSS/Diagnostico.css">
+    <title>Novo Diagnostico</title>
 </head>
 <body>
+    <div id="Menu">
+            <a href="Principal.html">Voltar</a>
+        </div>
+        <h1>Alterar Diagnóstico</h1>
 <?php
     foreach($consultaDiagnostico as $key => $consDiag){
             $cod=($consDiag['codDiagnostico']);
@@ -17,7 +23,10 @@
     }
         ?>
     <form action="../editar-diagnostico/<?php echo "$cod/$codAnimal";?>" method="POST">
+    <div class="container">
+        <label id="NomeDiagn2"><b>Nome do Tratamento</b></label><br>
         <input type="text" name="txtTratamento" placeholder="Tratamento" value="<?php echo $tratamento?>">
+        <label id="Diagnos2"><b>Diagnóstico</b></label>
         <select name="txtEnfermidade">
             <option selected value="<?php echo $codEnfermidade;?>"><?php echo $nomeEnfermidade?></option>
             <?php
@@ -32,8 +41,9 @@
             echo $selectEnf;
     ?>
         </select>
-        <button>Enviar</button>
+        <button id="btn-alterar">Editar</button>
     </form>
-    <a href="../excluir-diagnostico/<?php echo"$cod/$codAnimal";?>"><button>Excluir</button></a>
+    <a href="../excluir-diagnostico/<?php echo"$cod/$codAnimal";?>"><input type="button" value="Excluir" class="btn-excluir"></button></a>
+    </div>
 </body>
 </html>

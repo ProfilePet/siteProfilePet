@@ -32,6 +32,10 @@ if(isset($_GET['url']))
             $usu = new UsuarioController();
             $usu->telaPrincipal();
         break;
+        case 'sair':
+            $usu = new UsuarioController();
+            $usu->Sair();
+        break;
         case 'editar-usuario':
             $usu = new UsuarioController();
             $usu->editar();

@@ -32,7 +32,7 @@ if (isset($_GET['escolha'])) {
             //echo("<option value=$codCidade>$cid</option>".PHP_EOL);
            $option.="
       <tbody>
-      <tr onclick=location.href='../tela-consultar-consulta/$cod'>
+      <tr>
       <td>$tipoConsulta</td>
       <td>$nomeClinica</td>
       <td>$veterinario</td>
@@ -103,7 +103,7 @@ if (isset($_GET['escolha'])) {
             //echo("<option value=$codCidade>$cid</option>".PHP_EOL);
             $option.="
   <tbody>
-    <tr onclick=location.href='../tela-consultar-diagnostico/$cod'>
+    <tr>
       <td>$tratamento</td>
       <td>$enfermidade</td>
       <td scope=col><a href=../tela-editar-diagnostico/$cod><button><i class='fa-solid fa-pen-to-square'></i></button></a></td>

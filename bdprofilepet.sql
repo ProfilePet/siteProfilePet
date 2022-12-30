@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 07-Nov-2022 às 21:31
--- Versão do servidor: 10.4.21-MariaDB
--- versão do PHP: 8.0.12
+-- Host: localhost
+-- Tempo de geração: 19-Nov-2022 às 23:53
+-- Versão do servidor: 5.7.36
+-- versão do PHP: 8.1.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,6 +37,13 @@ CREATE TABLE `tbanimal` (
   `codRacaAnimal` int(11) NOT NULL,
   `codTemperamento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbanimal`
+--
+
+INSERT INTO `tbanimal` (`codAnimal`, `nomeAnimal`, `imagemAnimal`, `nascimentoAnimal`, `ativoAnimal`, `codUsuario`, `codRacaAnimal`, `codTemperamento`) VALUES
+(1, 'Paulinho', 'Imagens/PetPhoto/1img1.png', '2022-11-01', 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -5636,6 +5643,13 @@ CREATE TABLE `tbdiagnostico` (
   `ativoDiagnostico` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `tbdiagnostico`
+--
+
+INSERT INTO `tbdiagnostico` (`codDiagnostico`, `tratamento`, `codAnimal`, `codEnfermidade`, `ativoDiagnostico`) VALUES
+(1, 'Remédio', 1, 16, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -6182,6 +6196,13 @@ CREATE TABLE `tblembreteconsulta` (
   `codAnimal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `tblembreteconsulta`
+--
+
+INSERT INTO `tblembreteconsulta` (`codConsulta`, `dataConsulta`, `horaConsulta`, `nomeClinica`, `localConsulta`, `nomeVeterinario`, `tipoConsulta`, `codDiagnostico`, `ativoLembreteConsulta`, `codAnimal`) VALUES
+(1, '2022-11-01', '12:00:00', 'ACA', 'Rua tals', 'Joakin', 'Geral', 1, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -6197,6 +6218,15 @@ CREATE TABLE `tblembretemedicacao` (
   `codAnimal` int(11) NOT NULL,
   `ativoLembreteMedicacao` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tblembretemedicacao`
+--
+
+INSERT INTO `tblembretemedicacao` (`codLembreteMed`, `dataInicial`, `dataFinal`, `hora`, `codMedicacao`, `codAnimal`, `ativoLembreteMedicacao`) VALUES
+(1, '2022-11-01', '2022-11-30', 1, 1, 1, 1),
+(2, '2022-11-01', '2022-11-30', 1, 1, 1, 0),
+(3, '2022-11-14', '2022-11-28', 17, 18, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -6424,7 +6454,6 @@ INSERT INTO `tbmedicacao` (`codMedicacao`, `nomeMedicacao`) VALUES
 (208, 'Vacina para Mixomatose;'),
 (209, 'Vacina para Doença Hemorrágica Viral – Dhv ');
 
-
 -- --------------------------------------------------------
 
 --
@@ -6576,6 +6605,15 @@ CREATE TABLE `tbtemperamento` (
   `temperamento` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `tbtemperamento`
+--
+
+INSERT INTO `tbtemperamento` (`codTemperamento`, `temperamento`) VALUES
+(1, 'Calmo'),
+(2, 'Agressivo'),
+(3, 'Temperamental');
+
 -- --------------------------------------------------------
 
 --
@@ -6586,12 +6624,19 @@ CREATE TABLE `tbusuario` (
   `codUsuario` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `celular` char(11) NOT NULL,
+  `celular` char(15) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `ativo` tinyint(1) NOT NULL,
   `codCidade` int(11) NOT NULL,
   `codEstado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbusuario`
+--
+
+INSERT INTO `tbusuario` (`codUsuario`, `nome`, `email`, `celular`, `senha`, `ativo`, `codCidade`, `codEstado`) VALUES
+(1, 'Gustavo', 'gugaben28@gmail.com', '(11) 96153-5779', 'a79c0929b4b03f4c61480d29efd14981', 1, 4895, 26);
 
 --
 -- Índices para tabelas despejadas
@@ -6698,7 +6743,7 @@ ALTER TABLE `tbusuario`
 -- AUTO_INCREMENT de tabela `tbanimal`
 --
 ALTER TABLE `tbanimal`
-  MODIFY `codAnimal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codAnimal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tbcidade`
@@ -6710,7 +6755,7 @@ ALTER TABLE `tbcidade`
 -- AUTO_INCREMENT de tabela `tbdiagnostico`
 --
 ALTER TABLE `tbdiagnostico`
-  MODIFY `codDiagnostico` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codDiagnostico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tbenfermidade`
@@ -6734,13 +6779,13 @@ ALTER TABLE `tbestado`
 -- AUTO_INCREMENT de tabela `tblembreteconsulta`
 --
 ALTER TABLE `tblembreteconsulta`
-  MODIFY `codConsulta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codConsulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tblembretemedicacao`
 --
 ALTER TABLE `tblembretemedicacao`
-  MODIFY `codLembreteMed` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codLembreteMed` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tbmedicacao`
@@ -6764,13 +6809,13 @@ ALTER TABLE `tbraca`
 -- AUTO_INCREMENT de tabela `tbtemperamento`
 --
 ALTER TABLE `tbtemperamento`
-  MODIFY `codTemperamento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codTemperamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `tbusuario`
 --
 ALTER TABLE `tbusuario`
-  MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas

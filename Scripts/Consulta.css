@@ -9,6 +9,14 @@
     border-color: #050A30;
     text-align: inherit;
 }
+a{
+    color: #fff;
+    position: relative;
+    top: 40px;
+    left: 50px;
+    text-decoration: none;
+    font-size: 15px;
+}
 #Form input{
     margin: 3%; 
 }
@@ -60,16 +68,18 @@ input#btn-Exc{
 
 img{
     position: absolute;
+    bottom: 0;
     top: 750px;
     left: 20px;
 }
 
 /*Formatando o rodapé*/
 #rodape{
+    bottom: 0;
     width: 100%;
     height: 100px;
     background-color: #050A30;
-    margin-top: 140px;
+    margin-top: 13%;
 }
 
 /*Formatando o Profile Pet*/
@@ -92,14 +102,6 @@ p{
 }*/
 
 /*Arrumando a posição e decorando*/
-a{
-    color: #fff;
-    position: relative;
-    top: 40px;
-    left: 50px;
-    text-decoration: none;
-    font-size: 15px;
-}
 #Form{
     align-items: center;
     text-align: center;
