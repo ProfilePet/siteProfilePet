@@ -1,0 +1,158 @@
+/*Div formulário*/
+*{
+    padding: 0%;
+    margin: 0%;
+}
+#Form{
+    width: 40%;
+    height: 30vw;
+    margin: 0 auto;
+    margin-top: 60px;
+    border-radius: 10px;
+    border: inset;
+    border-color: #050A30;
+    text-align: center;
+}
+
+/*Div Menu*/
+#Menu{
+    width: 100%;
+    height: 100px;
+    background-color:#050A30;
+}
+
+/*Titulo - Nova Medicacação*/
+h2{
+  color: #050A30;
+  font-family: 'Josefin',sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 4%;
+}
+
+/*Arrumando a posição e decorando*/
+a{
+    color: #fff;
+    position: relative;
+    top: 40px;
+    left: 50px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/*Formatando o rodapé*/
+#rodape{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    top: 100%;
+    height: 100px;
+    background-color: #050A30;
+}
+
+/*Formatando o Profile Pet*/
+p{
+    color: #fff;
+    font: 15px;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+/*Label Data inicial da medicação*/
+
+/*Calendário - Data inicial*/
+
+/*Label Horário do remedio*/
+
+
+/*Select Medicação
+#SeleMedi{
+    border-radius: 10px;
+    width: 190px;
+    height: 40px;
+    border-color: #050A30;
+    position: relative;
+    top: 180px;
+    left: -265px;
+}*/
+
+/*Label Data final
+#Df{
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font: 15px;
+    top: 170px;
+    position: relative;
+    left: 80px;
+}*/
+
+/*Calendário Data final*/
+
+
+/*Formatando o botão cadastrar*/
+#btn-Cada{
+    background-color: #00AFB9;
+    color: #fff;
+    font-family: 'Josefin', sans-serif;
+    width: 40%;
+    height: 57.39px;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 10px;
+}
+
+/*Colocando efeito no botão*/
+#btn-Cada:hover{
+    background-color: #ADD8E6;
+    color: #050A30;
+}
+input#btn-Exc{
+    background-color: #00AFB9;
+    color: #fff;
+    font-family: 'Josefin', sans-serif;
+    width: 40%;
+    height: 57.39px;
+    margin-left: -20%;
+    border: none;
+    border-radius: 10px;
+}
+
+/*Colocando efeito no botão*/
+#btn-Exc:hover{
+    background-color: #ADD8E6;
+    color: #050A30;
+}
+
+img {
+    display: block;
+    position: absolute;
+    /* top: 700px; */
+    left: 20px;
+}
+
+.form1 {
+    text-align: center;
+    display: inline-grid;
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font: 15px;
+    top: 170px;
+}
+.form2 {
+    text-align: center;
+    display: inline-grid;
+}
+#Input{
+    margin: 2%;
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font: 15px;
+    top: 170px;
+    border-radius: 10px;
+    width: 190px;
+    height: 40px;
+    border-color: #050A30;
+}

@@ -1,0 +1,63 @@
+
+button.btnImprimir {
+    margin-left: 3%;
+}
+button.btnAdicionar {
+    height: 4vh;
+    border-radius: 45%;
+    border: none;
+    margin: 3%;
+    width: 4%;
+}
+td button {
+    border: none;
+    background: none;
+}
+tr:hover{
+    background-color: #00AFB9;
+}
+#resultado{
+    background-color: white;
+    border-radius: 8px;
+    margin: 3%;
+}
+.selectEscolha{
+    margin: 3%;
+}
+.consultas{
+    margin: 3%;
+}
+.diagnostico {
+    margin: 3%;
+}
+.medicacoes{
+    margin: 3%;
+}
+.form-select{
+    margin-right: 3%;
+}
+table.table.table-bordered.border-primary.medicacao {
+    max-inline-size: -webkit-fill-available;
+    align-content: flex-start;
+    display: table;
+    margin: 3%;
+}
+table.table.table-bordered.border-primary.diagnostico {
+    max-inline-size: -webkit-fill-available;
+    align-content: flex-start;
+    display: table;
+    margin: 3%;
+}
+table.table.table-bordered.border-primary.consulta {
+    max-inline-size: -webkit-fill-available;
+    align-content: flex-start;
+    display: table;
+    margin: 3%;
+}
+tbody, td, tfoot, th, thead, tr {
+    margin: 3%;
+    padding: 3%;
+    text-align: center;
+    background-color: white;
+    color: #050A30;
+}
