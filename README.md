@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Profile Pet
 
 ## Sobre
@@ -51,4 +49,3 @@ Autores
 @nicolasrodrigues23
 @gustavoeric
 @LaisTauany11
->>>>>>> develop
