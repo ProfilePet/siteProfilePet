@@ -4,13 +4,29 @@
         public function erro(){
             include 'View/modulos/Usuario/TelaErro.php';
         }
+        public function telaSobre(){
+            include 'View/modulos/Usuario/sobre.html';
+        }
+        public function Sair(){
+            session_start();
+            unset($_SESSION['dados']);
+            $this->telaSobre();
+        }
+        public function telaPrincipal(){
+            session_start();
+            if (isset($_SESSION['dados'])){
+                $nome=$_SESSION['nomeUsu'];
+                include('View/modulos/Usuario/Principal.html');
+            }
+            else{
+                include 'View/modulos/Usuario/login.php';
+            }
+        }
         public function telaCadastrar(){
             include_once('DAO/UsuarioDAO.php');
             $objUsuarioDao = new UsuarioDAO();
             $consultaES = $objUsuarioDao->ConsultarEstado();
-            $consultaCID = $objUsuarioDao->ConsultarCidade();
             $consultaES = $consultaES->fetchAll();
-            $consultaCID = $consultaCID->fetchAll();
             //var_dump($consultaES);
                 
             //Duas Consultas não ta funcionando
@@ -33,6 +49,28 @@
                     $objUsuario->setCidade($_POST['cidades']);
                     $objUsuario->setEstado($_POST['estados']);
             $retorno = UsuarioDAO::Cadastrar($objUsuario);
+            echo "
+            <body></body><script src=//cdn.jsdelivr.net/npm/sweetalert2@11></script>
+                    <script type=\"text/javascript\">
+                    Swal.fire({
+                        title: 'Usuário Cadastrado Com Sucesso.',
+                        width: 600,
+                        padding: '3em',
+                        color: '#716add',
+                        background: '#fff url(/images/trees.png)',
+                        backdrop: `
+                          rgba(0,0,123,0.4)
+                          url(/images/nyan-cat.gif)
+                          left top
+                          no-repeat
+                        `
+                      }).then((result) =>{
+                        if (result.isConfirmed){
+                            window.location='tela-login-usuario'
+                        }
+                    })
+                    </script>
+                    ";
 
 
         }
@@ -40,7 +78,7 @@
             include_once('Model/Usuario.php');
             include_once('DAO/UsuarioDAO.php');
             $objUsuario = new Usuario();
-                    $objUsuario->setCodUsuario(10);
+                    $objUsuario->setCodUsuario(21);
                     $objUsuario->setNomeUsuario('testado');
                     $objUsuario->setEmail('testado@gmail.com');
                     $objUsuario->setCelular('1123477789234');
@@ -62,10 +100,11 @@
             include_once('Model/Usuario.php');
             
             $objUsuario = New Usuario();
+            $objUsuarioDao = new UsuarioDAO();
         
-            $objUsuario->setEmail(strtolower($_POST['txtEmail']));
+            $objUsuario->setEmail($_POST['txtEmail']);
             $senha = md5($_POST['txtSenha']);
-            $verifica = UsuarioDAO::Verifica($objUsuario);
+            $verifica =$objUsuarioDao->Verifica($objUsuario);
             
             $linhasRetorno=$verifica->rowCount();
             if ($linhasRetorno!=0){
@@ -89,7 +128,12 @@
                     ";
                 }
                 else {
-                    include 'View/modulos/Usuario/sobre.html';
+                    session_start();
+                    $_SESSION['dados'] = $objUsuario;
+                    $_SESSION['codigoUsu'] = $objUsuario->getCodUsuario();
+                    $_SESSION['nomeUsu'] = $objUsuario->getNomeUsuario();
+                    //Mandando Codigo do Usuario Para outra tela
+                    header('Location:tela-principal-usuario');
                 }    
             }
             else{

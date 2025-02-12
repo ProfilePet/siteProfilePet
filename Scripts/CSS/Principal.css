@@ -1,0 +1,209 @@
+#Menu{
+    background-color: #00AFB9;
+    width: 100%;
+    height: 50px;
+}
+
+#saida{
+    color: #ffff;
+    position: absolute;
+    word-spacing: 60px;
+    font-size: 17px;
+    left: 95%;
+    top: 10px;
+}
+
+/*Personalizando as letras do menu*/
+p{
+    color: #ffff;
+    position: absolute;
+    word-spacing: 10px;
+    font-size: 17px;
+    left: 20px;
+    top: 10px;
+}
+
+/*Largura e altura da div consulta*/
+#div_consulta{
+    width: 100%;
+    height: 600px;
+}
+
+/*Botão Consulta*/
+#btn-consulta{
+    background-color: #00AFB9;
+    height: 50px;
+    width: 95px;
+    border-radius: 10px;
+    border: none;
+    color: #ffff;
+    position: absolute;
+    left: 550px;
+    top: 1000px;
+}
+
+/*Arrumando a posição do quadro consulta*/
+#quadro-consulta{
+    position: absolute;
+    left: 35px;
+    top: 650px;
+
+}
+
+/*Titulo Consultas*/
+#titulo-consulta{
+    color: #050A30;
+    position: absolute;
+    left: 550px;
+    top: 780px;
+}
+
+/*Frase explicativa sobre consulta*/
+#frase-consulta{
+    color: #050A30;
+    font-size: 20px;
+    position: absolute;
+    left: 550px;
+    top: 860px;
+}
+
+/*Banner Consultas*/
+#banner-consulta{
+    position: absolute;
+    left: 80px;
+    top: 1300px;
+    width: 90%;
+    height: 300px;
+}
+
+/*DIV vacina para orientar os objetos que vai nela*/
+#div-vacina{
+    width: 100%;
+    height: 600px;
+}
+#div-vacina img{
+    width: 50%;
+}
+
+/*Botão vacina*/
+#btn-vacina{
+    background-color: #00AFB9;
+    height: 50px;
+    width: 95px;
+    border-radius: 10px;
+    border: none;
+    color: #ffff;
+    position: absolute;
+    left: 670px;
+    top: 1930px;
+}
+
+/*Arrumando a posição do quadro vacina*/
+#quadro-vacina{
+    position: absolute;
+    right: 35px;
+    top: 1560px;
+}
+
+/*Titulo Vacinação*/
+#titulo-vacina{
+    color: #050A30;
+    position: absolute;
+    right: 550px;
+    top: 1710px;
+}
+
+/*Frase explicativa sobre as vacinas*/
+#frase-vacina{
+    color: #050A30;
+    font-size: 20px;
+    position: absolute;
+    top: 1800px;
+    left: 200px;
+}
+
+
+/*DIV medicação para orientar os objetos que vai nela*/
+#div-medicacao{
+    width: 100%;
+    height: 600px;
+}
+
+/*Botão medicacao*/
+#btn-medicacao{
+    background-color: #00AFB9;
+    height: 50px;
+    width: 95px;
+    border-radius: 10px;
+    border: none;
+    color: #ffff;
+    position: absolute;
+    left: 580px;
+    top: 3090px;
+}
+
+/*Arrumando a posição do quadro medicação*/
+#quadro-medicacao{
+    position: absolute;
+    left: 35px;
+    top: 2720px;
+}
+
+/*Titulo Medicação*/
+#titulo-medicacao{
+    color: #050A30;
+    position: absolute;
+    left: 530px;
+    top: 2830px;
+}
+
+/*Frase explicativa sobre as medicação*/
+#frase-medicacao{
+    color: #050A30;
+    font-size: 20px;
+    position: absolute;
+    top: 2920px;
+    left: 530px;
+}
+
+/*Rodapé o site*/
+#rodape{
+    background-color: #050A30;
+    height: 150px;
+    width: 100%;
+    color: white;
+    position: absolute;
+    top: 3300px;
+    word-spacing: 12px;
+}
+
+/*Letras do rodapé*/
+#letra-rodape{
+    color: #fff;
+    font-size: 15px;
+    padding: 20px 10px;
+    margin-top: 10px;
+    margin-left: 350px;
+}
+
+a{
+    text-align: center;
+    text-decoration: none;
+    word-spacing: 8px;
+    color: #ffff;  
+}
+
+a:hover{
+    color: #050A30;
+}
+
+#btn-consulta:hover{
+   background-color: #ADD8E6;
+   color: #050A30;
+}
+
+#curiosidade{
+    width: 95%;
+    height: 600px;
+    margin-top: 60%;
+}

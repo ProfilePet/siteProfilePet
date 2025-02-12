@@ -1,0 +1,118 @@
+*{margin: 0; padding: 0;
+}
+body.fundo{
+    background-color: #050A30;
+}
+
+#Menu{
+    background-color: #050A30;
+    width: 100%;
+    height: 70px;
+}
+
+#Perfil-dados{
+    background-color:  #00AFB9;
+    width: 100%;
+    height: 600px;
+}
+
+p{
+    font-family: 'Josefin', sans-serif;
+    color: #050A30;
+    font-size: 30px;
+    margin-left: 550px;
+    top: -220px;
+    line-height: 70px;
+    position: relative;
+}
+
+#Imagem{
+    background-color:  #fff;
+    width: 30%;
+    height: 350px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #050A30;
+    object-fit: contain;
+}
+#Imagem img.img-thumbnail{
+    object-fit: contain;
+}
+
+#informacao{
+    width: 100%;
+    height: 800px;
+    background-color: #050A30;
+    margin-left: 0%;
+  
+}
+
+h1{
+    color: #fff;
+    text-align: center;
+    font-family: 'Josefin', sans-serif;
+    top: 60px;
+    position: relative;
+}
+select#Escolhas {
+    /* padding-left: 284%; */
+    width: -webkit-fill-available;
+    position: absolute;
+    right: -1.5%;
+}
+
+#resultado{
+    background-color: white;
+    border-radius: 8px;
+    margin: auto;
+    display: block;
+    margin: 15%;
+}
+
+#selectDiv{
+    background-color: #050A30;
+    width: 20%;
+    height: 30px;
+    margin-left: 50x;
+    margin: 5%;
+}
+
+#img-patinhas{
+    width: 340px;
+    height: 300px;
+    position: absolute;
+    left: 60%;
+    top: 810px; 
+}
+
+#Menu a{
+    float: left;
+    color: #fff ;
+    text-align: center;
+    padding: 15px 17px;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+    left: 60px;
+    top: 10px;
+}
+
+#rodape{
+    width: 100%;
+    height: 60px;
+    background-color: #00AFB9;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Josefin', sans-serif;
+    display: block;
+    bottom: 0%;
+    height: 70px;
+    width: 100%;
+    margin-top: 16%;
+}
+
+

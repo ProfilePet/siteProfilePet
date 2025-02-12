@@ -1,0 +1,132 @@
+/*Div formulário*/
+#Form{
+    width: 50%;
+    height: 550px;
+    margin: 0 auto;
+    margin-top: 60px;
+    border-radius: 10px;
+    border: inset;
+    border-color: #050A30;
+    text-align: inherit;
+}
+a{
+    color: #fff;
+    position: relative;
+    top: 40px;
+    left: 50px;
+    text-decoration: none;
+    font-size: 15px;
+}
+#Form input{
+    margin: 3%; 
+}
+
+/*Div Menu*/
+#Menu{
+    width: 100%;
+    height: 100px;
+    background-color:#050A30;
+}
+
+/*Titulo - Nova Medicacação*/
+
+/*Formatando o botão cadastrar*/
+#btn-Cada{
+    background-color: #00AFB9;
+    color: #fff;
+    font-family: 'Josefin', sans-serif;
+    width: 356px;
+    height: 57.39px;
+    margin-top: 10%;
+    right: -590px;
+    border: none;
+    border-radius: 10px;
+}
+
+/*Colocando efeito no botão*/
+#btn-Cada:hover{
+    background-color: #ADD8E6;
+    color: #050A30;
+}
+input#btn-Exc{
+    background-color: #00AFB9;
+    color: #fff;
+    font-family: 'Josefin', sans-serif;
+    width: 356px;
+    height: 57.39px;
+    margin-top: 2%;
+    margin-left: -13%;
+    border: none;
+    border-radius: 10px;
+}
+
+/*Colocando efeito no botão*/
+#btn-Exc:hover{
+    background-color: #ADD8E6;
+    color: #050A30;
+}
+
+img{
+    position: absolute;
+    bottom: 0;
+    top: 750px;
+    left: 20px;
+}
+
+/*Formatando o rodapé*/
+#rodape{
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #050A30;
+    margin-top: 13%;
+}
+
+/*Formatando o Profile Pet*/
+p{
+    color: #fff;
+    font: 15px;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+/*Input Veterinário
+#InputVet{
+    border-radius: 10px;
+    width: 290px;
+    height: 30px;
+    position: absolute;
+    left: 465px;
+    top: 330px;
+    border-color: #050A30;
+}*/
+
+/*Arrumando a posição e decorando*/
+#Form{
+    align-items: center;
+    text-align: center;
+}
+#Form button{
+    display: inline-table;
+}
+
+.inputs1 {
+    display: inline-grid;
+    border-radius: 10px;
+    border-color: #050A30;
+}
+.inputs1 #Input {
+    display: inline-grid;
+    border-radius: 10px;
+    border-color: #050A30;
+}
+.inputs2 #Input {
+    display: inline-grid;
+    border-radius: 10px;
+    border-color: #050A30;
+}
+.inputs2 {
+    display: inline-grid;
+    border-radius: 10px;
+    border-color: #050A30
+}

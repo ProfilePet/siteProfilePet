@@ -1,0 +1,92 @@
+/*Cor de fundo*/
+body{
+    background-color:  #00AFB9;
+}
+
+/*Div principal*/
+#Principal-meio{
+    background-color: #fff;
+    margin: auto;
+    width: 74%;
+    height: 83vh;
+    margin-top: 50px;
+    border-color: #050A30;
+    border-style: solid;
+    border-radius: 10px;
+
+}
+#Principal-meio input:active{
+    border-color: #00AFB9;
+}
+
+img{
+    width: 35%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: list-item;
+}
+
+#email{
+    color: #050A30;
+    font-family: 'Josefin', sans-serif;
+    font-size: 20px;
+    margin-top: 2%;
+    margin-left: 9%;
+    display: table;
+}
+
+#InpuEmail{
+    display: block;
+    width: 78%;
+    margin: 2% 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 20px;
+    border: 1px solid #050A30;
+    border-radius: 8px;
+   
+}
+
+
+#senha{
+    color: #050A30;
+    font-family: 'Josefin', sans-serif;
+    font-size: 20px;
+    margin-top: 3%;
+    margin-left: 9%;
+    display: table;
+}
+
+#InpuSenha{
+    display: block;
+    width: 78%;
+    padding: 12px 20px;
+    margin: 2% 0;
+    border: 1px solid #050A30;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline;
+    width: 26%;
+    height: 40px;
+    background-color: #00AFB9;
+    margin-top: 3%;
+    margin: 3%;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn:hover{
+    background-color: #ADD8E6;
+    color: #050A30;
+}
+

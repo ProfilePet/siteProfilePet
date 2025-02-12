@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#menu-h ul{
+    background-color: #050A30;
+    list-style-type: none;
+    padding: 0;
+
+}
+#menu-h ul li{
+    display: inline;
+}
+#menu-h ul li a{
+    color: white;
+    padding: 1.50%;
+    display: inline-block;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: background .3s;
+}
+#menu-h ul li :hover{
+    background-color: #1f2d92;
+}
+.medicacao{
+    margin: 3%;
+    background-color: #00AFB9;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2%;
+    color: white;
+}
+.medicacao p{
+    padding-bottom: 5%;
+}
+.medicacao button{
+    background-color: white;
+    color: #00AFB9;
+    border: none;
+    padding: 1%;
+}
+.btn1 :hover{
+    background-color: brown;
+}
+.infoMedicacoes{
+    margin: 3%;
+    background-color: #00AFB9;
+    color: white;
+}
+

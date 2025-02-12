@@ -7,6 +7,7 @@ class Animal {
     private $nascimentoAnimal;
     private $codUsuarioA;
     private $codRacaAnimal;
+    private $codEspecie;
     private $temperamentoAnimal;
     private $ativoAnimal;
 
@@ -63,7 +64,7 @@ class Animal {
         $this->codRacaAnimal = $codRacaAnimal;
         return $this;
     }
-
+    
     public function getTemperamentoAnimal(){
         return $this->temperamentoAnimal;
     }
